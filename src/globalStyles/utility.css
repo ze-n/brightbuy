@@ -6,3 +6,7 @@
   flex: 1;
   flex-basis: 100%;
 }
+
+.no-margin {
+  margin: 0 !important;
+}

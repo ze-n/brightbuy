@@ -25,12 +25,8 @@ const Header = () => {
               <Logo />
             </a>
           </li>
-          {/* <li className="nav__items">
-            <a href="#" className="nav__link">
-              Learn
-            </a>
-          </li> */}
-          <li className="nav__items">
+
+          <li className="nav__items no-margin">
             <a href="#" className="nav__link">
               About Us
             </a>

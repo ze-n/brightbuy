@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { ReactComponent as LogoIcon } from "../assets/svgs/logo.svg";
+import { ReactComponent as LogoIcon } from "../../assets/svgs/logo.svg";
 
 const Logo = () => {
   return (

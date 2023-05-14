@@ -4,12 +4,15 @@ import { styled } from "styled-components";
 const ShopDropDown = () => {
   return (
     <Wrapper>
-      Shop <RiArrowDropDownLine className="icon" />
+      <div className="shop">
+        Shop <RiArrowDropDownLine className="icon" />
+      </div>
+      <div className="dropdown"></div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.span`
+const Wrapper = styled.div`
   /*  */
   /* typography */
   /*  */
@@ -22,8 +25,10 @@ const Wrapper = styled.span`
   /*  */
 
   /* aligning text and icon vertically */
-  display: flex;
-  align-items: center;
+  .shop {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export default ShopDropDown;

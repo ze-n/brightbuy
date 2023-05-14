@@ -1,5 +1,5 @@
 import React from "react";
-import userImg from "../assets/uesrDp.png";
+import userImg from "../assets/userDp.png";
 import { styled } from "styled-components";
 const UserDp = () => {
   return (

@@ -47,6 +47,8 @@ const Wrapper = styled.ul`
   /* setting images */
   --img-size: 70px;
   .product__image {
+    /* min-width is added because image size was reducing for unkown reason when viewport reduced  */
+    min-width: var(--img-size);
     width: var(--img-size);
     height: var(--img-size);
     object-fit: cover;

@@ -39,7 +39,8 @@ const Wrapper = styled.div`
   /* media query for 1000px */
   @media screen and (max-width: 1000px) {
     .icon {
-      /* max-height: 2rem; */
+      /* making icon look even with logo font on this screen size */
+      max-height: 2rem;
     }
   }
 `;

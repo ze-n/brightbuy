@@ -15,4 +15,26 @@ body {
   --gradient-orange: linear-gradient(to right, #fe7a68, #f69b5a);
   --ff-sans: "Montserrat", sans-serif;
   --ff-serif: "Lora", serif;
+
+  --fs-x-small: 0.7;
+  --fs-small: 0.8;
+  --fs-regular: 1rem;
+  --fs-medium: 1.2rem;
+  --fs-medium-plus: 1.4rem;
+  --fs-lg: 1.6rem;
+  --fs-xl: 1.8rem;
+  --fs-logo: 1.6rem;
+}
+
+/* media query for 1000px */
+
+@media screen and (max-width: 1000px) {
+  /*  */
+  /* typography */
+  /*  */
+  body {
+    --fs-medium: 1rem;
+    --fs-lg: 1.4rem;
+    --fs-logo: 1.5rem;
+  }
 }

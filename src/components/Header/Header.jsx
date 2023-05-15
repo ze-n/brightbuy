@@ -8,9 +8,9 @@ import ShopDropDown from "./ShopDropDown";
 const Header = () => {
   return (
     <Wrapper>
-      <nav className="nav">
+      <nav className="nav container">
         <ul className="nav__list" role="list">
-          <li className="nav__items">
+          <li className="nav__items no-margin">
             <a href="#" className="nav__link">
               <ShopDropDown />
             </a>
@@ -74,9 +74,14 @@ const Wrapper = styled.header`
   /* layout */
   /*  */
   --mh: 6rem;
+  --mw: 1300px;
+  --pinline: 3rem;
   width: 100vw;
   min-height: var(--mh);
-  padding-inline: min(6rem, 3vw);
+  padding-inline: var(--pinline);
+
+  /* for aligning shop dropdown menu this will be used */
+  position: relative;
   /* arrnging entire navigation list in middle of header */
   .nav__list {
     min-height: var(--mh);
@@ -89,8 +94,15 @@ const Wrapper = styled.header`
     margin-left: 2.5rem;
   }
   /* dividing navigation into three parts */
-  .logo {
+  .nav__items.logo {
     margin-inline: auto;
+  }
+
+  /* media queries */
+  @media screen and (max-width: 1000px) {
+    .nav__items {
+      margin-left: 1rem;
+    }
   }
 `;
 export default Header;

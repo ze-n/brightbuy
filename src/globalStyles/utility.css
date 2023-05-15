@@ -10,3 +10,13 @@
 .no-margin {
   margin: 0 !important;
 }
+.container {
+  max-width: 100vw;
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1000px) {
+}

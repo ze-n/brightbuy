@@ -1,14 +1,18 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useState } from "react";
 import Logo from "./Logo";
 import UserDp from "./UserDp";
 import CartIconButton from "./CartIconButton";
 import ShopDropDown from "./ShopDropDown";
 
 const Header = () => {
+  const [hamburgerMenu, setHamburgerMenu] = useState(false);
   return (
     <Wrapper>
-      <nav className="nav container">
+      <nav
+        className={hamburgerMenu ? "nav container nav-open" : "nav container"}
+      >
         <ul className="nav__list" role="list">
           <li className="nav__items no-margin">
             <a href="#" className="nav__link">
@@ -20,7 +24,7 @@ const Header = () => {
               Best Sellers
             </a>
           </li>
-          <li className="nav__items logo">
+          <li className="nav__items logo hide-on-mobile">
             <a href="#" className="nav__link">
               <Logo />
             </a>
@@ -48,6 +52,32 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
+      <nav className="mobile-nav hide-on-desktop">
+        <a href="#" className="header-logo ">
+          <Logo />
+        </a>
+        <a href="#" className="mobile-nav__link mobile-userDp-btn">
+          <UserDp />
+        </a>
+        <a href="#" className="mobile-nav__link mobile-cart-btn">
+          <CartIconButton />
+        </a>
+        <div
+          className={
+            hamburgerMenu
+              ? "hamburger-menu hamburger-menu--active"
+              : "hamburger-menu"
+          }
+          onClick={() => {
+            setHamburgerMenu(!hamburgerMenu);
+          }}
+        >
+          <div className="bars" id="bar1"></div>
+          <div className="bars" id="bar2"></div>
+          <div className="bars no-margin" id="bar3"></div>
+        </div>
+      </nav>
     </Wrapper>
   );
 };
@@ -57,9 +87,15 @@ const Wrapper = styled.header`
   /* colors */
   /*  */
   background: var(--clr-black);
-
+  .nav {
+    background-color: inherit;
+  }
   a {
     color: var(--clr-white);
+  }
+  /* hamburger menu colors */
+  .bars {
+    background-color: var(--clr-white);
   }
 
   /*  */
@@ -68,23 +104,26 @@ const Wrapper = styled.header`
   a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+  }
+  .nav__link {
+    font-size: var(--fs-main-nav);
   }
   /*  */
   /* layout */
   /*  */
-  --mh: 6rem;
+  --mh-header: 6rem;
   --mw: 1300px;
   --pinline: 3rem;
   width: 100vw;
-  min-height: var(--mh);
+  min-height: var(--mh-header);
   padding-inline: var(--pinline);
+  padding-block: 1rem;
 
   /* for aligning shop dropdown menu this will be used */
   position: relative;
   /* arrnging entire navigation list in middle of header */
   .nav__list {
-    min-height: var(--mh);
+    min-height: var(--mh-header);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,8 +139,138 @@ const Wrapper = styled.header`
 
   /* media queries */
   @media screen and (max-width: 1000px) {
+    /* reducing margins to use space more effeciently */
     .nav__items {
       margin-left: 1rem;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    /*  */
+    /* typography */
+    /*  */
+    /* for font-sizes check out variables.css */
+    .nav__link {
+    }
+    /* layout */
+    /*  */
+
+    /* mobile nav stuff */
+
+    .mobile-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: var(--mh-header);
+    }
+    /* to create huge space between logo and other navigation */
+    .header-logo {
+      margin-right: auto;
+    }
+
+    /* hamburger menu stuff */
+    /* giving dimensions to bars of hamburger menu seperating them with some space*/
+    .bars {
+      width: 1.4rem;
+      height: 0.15rem;
+      margin-bottom: 0.3rem;
+    }
+    /* adding some border radius to bars for better look */
+    .bars {
+      border-radius: 999px;
+    }
+    /* making hamburger menu look clickable */
+    .hamburger-menu {
+      cursor: pointer;
+    }
+
+    /* minimum height of nav */
+    --nav-m-height: calc(100vh - var(--mh-header));
+    .nav {
+      min-height: var(--nav-m-height);
+      min-height: var(--nav-m-height);
+    }
+    /* placing nav for smaller devices */
+    .nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: var(--mh-header);
+    }
+    /* setting padding for nav */
+    .nav {
+      padding-inline: var(--pinline);
+    }
+
+    /* changing flex direction of nav__list to column */
+    .nav__list {
+      flex-direction: column;
+    }
+    /* increasing height of nav__list */
+    .nav__list {
+      min-height: var(--nav-m-height);
+      min-height: var(--nav-m-height);
+    }
+    /* arranging flex children i.e, nav__items to be shown towards right direction */
+    .nav__list {
+      align-items: end;
+    }
+    .nav__items {
+      margin: 0;
+      margin-bottom: 1.5rem !important;
+    }
+
+    /*  */
+    /* animations */
+    /*  */
+    /* toggle navigation */
+    .nav {
+      clip-path: circle(0% at 100% 0);
+    }
+    .nav-open {
+      clip-path: circle(141.4% at 100% 0);
+    }
+    .nav {
+      transition: clip-path 0.3s ease;
+    }
+    .hamburger-menu--active .bars {
+      transform-origin: right;
+    }
+    .hamburger-menu--active #bar1 {
+      transform: scaleX(0.6);
+    }
+    .hamburger-menu--active #bar2 {
+      transform: scaleX(0.8);
+    }
+    .bars {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    /*  */
+    /* colors */
+    /*  */
+    .mobile-cart-btn {
+      background-color: black;
+    }
+    /* reducing padding because less screen to work with */
+    --pinline: 1rem;
+    .mobile-cart-btn {
+      /* repositioning mobile-cart-button to bottom right because of less space  */
+      position: fixed;
+      bottom: 2rem;
+      right: 0;
+      /* giving width and height to give it circular border radius */
+      --size: 3.5rem;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 1000px;
+      /* centering cart component to center of button */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* reducing size of button because it is too big */
+      transform: scale(0.8);
     }
   }
 `;

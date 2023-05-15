@@ -8,7 +8,11 @@ import { useState } from "react";
 const ShopDropDown = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <Wrapper>
+    <Wrapper
+      onClick={() => {
+        setMenuOpen(!menuOpen);
+      }}
+    >
       <div className="shop" onClick={() => setMenuOpen(!menuOpen)}>
         Shop <IoIosArrowDown className="icon" />
       </div>
@@ -64,12 +68,14 @@ const Wrapper = styled.div`
     --pblock: 2rem;
     position: absolute;
     /* value of this variable is defined in Header.jsx for min height */
-    top: var(--mh);
+    top: var(--mh-header);
+
     left: 0;
     right: 0;
     width: 100%;
     padding-inline: var(--pinline);
     padding-block: var(--pblock);
+    z-index: 1;
   }
 
   /* menu Open Close css  */
@@ -79,6 +85,15 @@ const Wrapper = styled.div`
   }
   .active {
     clip-path: circle(121.8% at 30% 0);
+  }
+  /*  */
+  /* media queries */
+  /*  */
+  @media screen and (max-width: 750px) {
+    .dropdown {
+      /* on moblie navigation since entire nav is alreaddy pushed down to header */
+      top: 0;
+    }
   }
 `;
 

@@ -24,6 +24,7 @@ body {
   --fs-lg: 1.6rem;
   --fs-xl: 1.8rem;
   --fs-logo: 1.6rem;
+  --fs-main-nav: 1.1rem;
 }
 
 /* media query for 1000px */
@@ -36,5 +37,13 @@ body {
     --fs-medium: 1rem;
     --fs-lg: 1.4rem;
     --fs-logo: 1.3rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  /*  */
+  /* typography */
+  /*  */
+  body {
+    --fs-main-nav: 1.5rem;
   }
 }

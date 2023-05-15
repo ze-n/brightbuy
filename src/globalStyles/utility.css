@@ -15,8 +15,21 @@
   max-width: 1300px;
   margin-inline: auto;
 }
-
+/* hiding stuff on large screens */
+.hide-on-desktop {
+  display: none;
+}
 /* media queries */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 750px) {
+  /* changing direction of flex-column to column from row */
+  .flex-columns {
+    flex-direction: column;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+  .hide-on-desktop {
+    display: block;
+  }
 }

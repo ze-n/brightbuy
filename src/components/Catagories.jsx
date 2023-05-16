@@ -1,10 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
+import Title from "./Title";
 
 const Catagories = () => {
   return (
     <Wrapper className="catagory__list" role="list">
-      <h2 className="title">Catagories &rarr;</h2>
+      <Title title="Catagories" />
 
       <li className="catagory__item">
         <a href="#" className="catagory__link">
@@ -67,8 +68,8 @@ const Wrapper = styled.ul`
   .catagory__title {
     font-size: var(--fs-medium);
   }
-  .title {
-    font-size: var(--fs-lg);
+  .catagory__link {
+    font-weight: 600;
   }
   /*  */
   /* layout */
@@ -92,12 +93,10 @@ const Wrapper = styled.ul`
 
   .catagory__title {
     position: relative;
-    z-index: 3;
+    z-index: 1;
   }
   /* margins */
-  .title {
-    margin-bottom: 2rem;
-  }
+
   .catagory__item {
     margin-bottom: 0.5rem;
   }

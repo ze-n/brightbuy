@@ -1,10 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
+import Title from "../Title";
 
 const FeaturedProducts = () => {
   return (
     <Wrapper className="product__list" role="list">
-      <h2 className="title">Best Sellers &rarr;</h2>
+      <Title title="Featured Products" />
       <li className="product__item">
         <a href="#" className="product__link">
           <img

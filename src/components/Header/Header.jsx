@@ -121,6 +121,8 @@ const Wrapper = styled.header`
 
   /* for aligning shop dropdown menu this will be used */
   position: relative;
+  /* this heigh z-index issures that header alwalys stays at top */
+  z-index: 99;
   /* arrnging entire navigation list in middle of header */
   .nav__list {
     min-height: var(--mh-header);
@@ -253,6 +255,10 @@ const Wrapper = styled.header`
     .mobile-cart-btn {
       background-color: black;
     }
+
+    /*  */
+    /* layout */
+    /*  */
     /* reducing padding because less screen to work with */
     --pinline: 1rem;
     .mobile-cart-btn {

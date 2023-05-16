@@ -1,9 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
+import Title from "../Title";
 const BestSellers = () => {
   return (
     <Wrapper className="product__list" role="list">
-      <h2 className="title">Best Sellers &rarr;</h2>
+      <Title title="Best Sellers" />
       <li className="product__item">
         <a href="#" className="product__link">
           <img
@@ -37,9 +38,6 @@ const Wrapper = styled.ul`
   .product__title {
     font-size: var(--fs-medium);
   }
-  .title {
-    font-size: var(--fs-lg);
-  }
 
   /*  */
   /* layout */
@@ -64,9 +62,6 @@ const Wrapper = styled.ul`
     max-width: 25ch;
   }
   /* setting margins */
-  .title {
-    margin-bottom: 2rem;
-  }
   .product__item {
     margin-bottom: 1rem;
   }

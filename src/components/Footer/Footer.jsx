@@ -51,7 +51,6 @@ const Wrapper = styled.footer`
   /* layout */
   /*  */
 
-  --pinline: 2rem;
   /* padding for footer__bottom */
   .footer__bottom {
     padding-inline: var(--pinline);

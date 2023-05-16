@@ -26,6 +26,8 @@ body {
   --fs-logo: 1.6rem;
   --fs-main-nav: 1.1rem;
   --fs-icon: 1.8rem;
+  /* padding */
+  --pinline: 3rem;
 }
 
 /* media query for 1000px */

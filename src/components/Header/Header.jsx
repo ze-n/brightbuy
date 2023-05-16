@@ -113,7 +113,6 @@ const Wrapper = styled.header`
   /*  */
   --mh-header: 6rem;
   --mw: 1300px;
-  --pinline: 3rem;
   width: 100vw;
   min-height: var(--mh-header);
   padding-inline: var(--pinline);

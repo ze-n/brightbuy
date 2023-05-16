@@ -10,7 +10,9 @@ const FooterAbout = () => {
         Get the best deals over latest products from various top brands. All in
         one place from clothes to electronics to even food.{" "}
       </p>
-      <PlainBtn text="Shop now" />
+      <div className="cta">
+        <PlainBtn text="Shop now" />
+      </div>
     </Wrapper>
   );
 };
@@ -28,6 +30,9 @@ const Wrapper = styled.div`
   /*  */
   .footer-about-long-text {
     max-width: 30ch;
+  }
+  .cta {
+    margin-top: 2rem;
   }
 `;
 export default FooterAbout;

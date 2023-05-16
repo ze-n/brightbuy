@@ -56,12 +56,16 @@ const Wrapper = styled.a`
     transition: opacity 0.3s ease;
   }
   transition: color 0.3s ease, transform 0.3s ease;
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     /* colors */
     color: var(--clr-black);
     transform: scale(0.9);
   }
-  &:hover::after {
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
     opacity: 1;
   }
 `;

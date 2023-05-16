@@ -16,8 +16,8 @@ body {
   --ff-sans: "Montserrat", sans-serif;
   --ff-serif: "Lora", serif;
 
-  --fs-x-small: 0.7;
-  --fs-small: 0.8;
+  --fs-x-small: 0.7rem;
+  --fs-small: 0.8rem;
   --fs-regular: 1rem;
   --fs-medium: 1.2rem;
   --fs-medium-plus: 1.4rem;

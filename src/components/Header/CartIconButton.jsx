@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     font-weight: 800;
   }
   .counter {
-    font-size: 0.7rem;
+    font-size: var(--fs-x-small);
   }
 
   /*  */

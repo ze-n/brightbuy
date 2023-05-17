@@ -23,6 +23,7 @@ body {
   --fs-medium-plus: 1.4rem;
   --fs-lg: 1.6rem;
   --fs-xl: 1.8rem;
+  --fs-xxl: 2.2rem;
 
   /* special font sizes */
   --fs-logo: 1.6rem;
@@ -66,7 +67,7 @@ body {
     /* special font sizes */
     --fs-title: 2rem;
     --fs-subtitle: 1.3rem;
-
+    --fs-xxl: 1.8rem;
     /* line heights */
     --lh-title: 2.8rem;
     --lh-subtitle: 2rem;

@@ -23,9 +23,17 @@ body {
   --fs-medium-plus: 1.4rem;
   --fs-lg: 1.6rem;
   --fs-xl: 1.8rem;
+
+  /* special font sizes */
   --fs-logo: 1.6rem;
   --fs-main-nav: 1.1rem;
   --fs-icon: 1.8rem;
+  --fs-title: 3.5rem;
+  --fs-subtitle: 1.5rem;
+
+  /* line heights */
+  --lh-title: 4.5rem;
+  --lh-subtitle: 2rem;
   /* padding */
   --pinline: 3rem;
 }
@@ -40,6 +48,12 @@ body {
     --fs-medium: 1rem;
     --fs-lg: 1.4rem;
     --fs-logo: 1.3rem;
+
+    /* special font sizes */
+    --fs-title: 3rem;
+
+    /* line heights */
+    --lh-title: 3.5rem;
   }
 }
 @media screen and (max-width: 750px) {
@@ -48,5 +62,13 @@ body {
   /*  */
   body {
     --fs-main-nav: 1.5rem;
+
+    /* special font sizes */
+    --fs-title: 2rem;
+    --fs-subtitle: 1.3rem;
+
+    /* line heights */
+    --lh-title: 2.8rem;
+    --lh-subtitle: 2rem;
   }
 }

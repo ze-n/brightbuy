@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../components/Sections/Hero/Hero";
 import heroImage from "../../assets/hero-img.png";
+import BestSellingProducts from "./BestSellingProducts";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         btnText="Shop Best Sellers"
         heroImg={heroImage}
       />
+      <BestSellingProducts />
     </div>
   );
 };

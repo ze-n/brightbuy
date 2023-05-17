@@ -69,7 +69,6 @@ const Wrapper = styled.div`
     position: absolute;
     /* value of this variable is defined in Header.jsx for min height */
     top: var(--mh-header);
-
     left: 0;
     right: 0;
     width: 100%;
@@ -80,11 +79,11 @@ const Wrapper = styled.div`
 
   /* menu Open Close css  */
   .dropdown {
-    clip-path: circle(0% at 31% 0);
+    clip-path: circle(0% at 11% 0);
     transition: clip-path 0.4s ease;
   }
   .active {
-    clip-path: circle(121.8% at 30% 0);
+    clip-path: circle(141.4% at 100% 0);
   }
   /*  */
   /* media queries */
@@ -93,6 +92,8 @@ const Wrapper = styled.div`
     .dropdown {
       /* on moblie navigation since entire nav is alreaddy pushed down to header */
       top: 0;
+      /* reducing vertical padding because on very small devices some weird shape is made for unkown reason */
+      --pblock: 1rem;
     }
   }
 `;

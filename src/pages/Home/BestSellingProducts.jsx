@@ -50,7 +50,7 @@ const Wrapper = styled.section`
     margin-bottom: 4rem;
   }
 
-  /* craeteing some gap between product review cards */
+  /* creating some gap between product review cards */
   .products-review-container {
     display: flex;
     flex-direction: column;

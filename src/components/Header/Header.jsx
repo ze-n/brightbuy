@@ -154,7 +154,8 @@ const Wrapper = styled.header`
     }
     /* layout */
     /*  */
-
+    /* reducing padding because less space is available*/
+    --pinline: 2rem;
     /* mobile nav stuff */
 
     .mobile-nav {

@@ -91,6 +91,19 @@ const Wrapper = styled.section`
     .image-column {
       max-width: 100%;
     }
+    /* centering everything inside text column horizontally */
+    .text-column {
+      align-items: center;
+      text-align: center;
+    }
+    /* fixing position of button */
+    .cta-btn {
+      transform: scale(1.1);
+    }
+    /* centering flex columns horizontally */
+    .flex-columns {
+      align-items: center;
+    }
   }
 `;
 export default Hero;

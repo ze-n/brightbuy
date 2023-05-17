@@ -34,6 +34,8 @@ const Wrapper = styled.div`
   /*  */
   /* layout */
   /*  */
+  /* setting width */
+  max-width: max-content;
   /* centering things */
   display: flex;
   justify-content: center;

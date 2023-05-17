@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 import heroImg from "../../../assets/hero-img.png";
 import PlainBtn from "../../PlainBtn";
 import SpecialRating from "../../SpecialRating";
+import blob from "../../../assets/blob.svg";
+import blobs from "../../../assets/blobs.svg";
 const Hero = () => {
   return (
     <Wrapper>
@@ -22,7 +24,8 @@ const Hero = () => {
           </div>
         </div>
         <div className="image-column flex-column">
-          <img src={heroImg} alt="" />
+          <img src={heroImg} alt="" className="hero-img" />
+          <img src={blobs} alt="" className="blobs" />
         </div>
       </div>
     </Wrapper>
@@ -83,6 +86,22 @@ const Wrapper = styled.section`
   .cta-btn {
     transform: scale(1.1) translateX(5%);
   }
+  /* aliging decoration images */
+  /* setting up image-column to be relative */
+  .image-column {
+    position: relative;
+  }
+  /* positioning blobs */
+  .blobs {
+    position: absolute;
+    right: -10%;
+    top: -15%;
+  }
+  /* setting up hero-img to appear at top */
+  .hero-img {
+    position: relative;
+    z-index: 1;
+  }
 
   @media screen and (max-width: 750px) {
     /* setting up padding */
@@ -103,6 +122,10 @@ const Wrapper = styled.section`
     /* centering flex columns horizontally */
     .flex-columns {
       align-items: center;
+    }
+    /* aligning decoration images */
+    .blobs {
+      top: -5%;
     }
   }
 `;

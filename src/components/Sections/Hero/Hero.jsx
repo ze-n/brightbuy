@@ -1,11 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
-import heroImg from "../../../assets/hero-img.png";
 import PlainBtn from "../../PlainBtn";
 import SpecialRating from "../../SpecialRating";
 import blob from "../../../assets/blob.svg";
 import blobs from "../../../assets/blobs.svg";
-const Hero = () => {
+const Hero = ({ title, subTitle, btnText, heroImg }) => {
   return (
     <Wrapper>
       <div className="container flex-columns">
@@ -14,14 +13,10 @@ const Hero = () => {
             <div className="rating">
               <SpecialRating />
             </div>
-            <h1 className="title">
-              Discover the Best Selection of Products for Your Lifestyle
-            </h1>
-            <h2 className="sub-title">
-              We offers a broad range of products to meet your needs.
-            </h2>
+            <h1 className="title">{title}</h1>
+            <h2 className="sub-title">{subTitle}</h2>
             <div className="cta-btn">
-              <PlainBtn text="Shop Best Sellers" />
+              <PlainBtn text={btnText} />
             </div>
           </div>
           <img src={blob} alt="" className="blob" />
@@ -61,14 +56,10 @@ const Wrapper = styled.section`
     max-width: 25ch;
   }
 
-  /* centering text-container vertically */
-  /* this is done because text-column has more height than required because of flex:1 on flex-columns */
-  /* not so sure about why height is more */
-  .text-column {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
+  /* centering flex-columns vertically */
+  /*  */
+  .flex-columns {
+    align-items: center;
   }
   /* setting up padding */
   padding-inline: var(--pinline);
@@ -143,11 +134,7 @@ const Wrapper = styled.section`
       align-items: center;
       text-align: center;
     }
-    /* aligning image-column to be centered horizontally */
-    /* this works because image-column is child of flex-columns */
-    .image-column {
-      align-self: center;
-    }
+
     /* fixing position of button */
     .cta-btn {
       transform: scale(1.1);

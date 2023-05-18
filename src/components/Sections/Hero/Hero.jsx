@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import PlainBtn from "../../PlainBtn";
+import ShadowBtn from "../../ShadowBtn";
 import SpecialRating from "../../SpecialRating";
 import blob from "../../../assets/blob.svg";
 import blobs from "../../../assets/blobs.svg";
@@ -15,9 +15,7 @@ const Hero = ({ title, subTitle, btnText, heroImg }) => {
             </div>
             <h1 className="title">{title}</h1>
             <h2 className="sub-title">{subTitle}</h2>
-            <div className="cta-btn">
-              <PlainBtn text={btnText} />
-            </div>
+            <ShadowBtn text={btnText} />
           </div>
           <img src={blob} alt="" className="blob" />
         </div>
@@ -80,10 +78,6 @@ const Wrapper = styled.section`
     max-width: 45%;
   }
 
-  /* increasing size of cta-btn and fixing it's position */
-  .cta-btn {
-    transform: scale(1.1) translateX(5%);
-  }
   /* aliging decoration images */
 
   /* blobs stuff */
@@ -127,17 +121,12 @@ const Wrapper = styled.section`
     .image-column {
       max-width: 100%;
     }
-    /* centering everything inside text column horizontally */
+    /* centering everything inside text column along y-axis */
     .text-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-    }
-
-    /* fixing position of button */
-    .cta-btn {
-      transform: scale(1.1);
     }
 
     /* aligning decoration images */

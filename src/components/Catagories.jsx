@@ -31,7 +31,7 @@ const Catagories = () => {
         <a href="#" className="catagory__link">
           <p className="catagory__title">Accessories</p>
           <img
-            src="https://images.unsplash.com/photo-1534766438357-2b270dbd1b40?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM4MDY2MDd8&ixlib=rb-4.0.3&q=85"
+            src="https://images.unsplash.com/photo-1615210768832-159ca3912a05?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM4MDY2Mzh8&ixlib=rb-4.0.3&q=85"
             alt=""
             className="catagory__image"
           />
@@ -41,7 +41,7 @@ const Catagories = () => {
         <a href="#" className="catagory__link">
           <p className="catagory__title">Food</p>
           <img
-            src="https://images.unsplash.com/photo-1615210768832-159ca3912a05?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM4MDY2Mzh8&ixlib=rb-4.0.3&q=85"
+            src="https://images.unsplash.com/photo-1534766438357-2b270dbd1b40?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM4MDY2MDd8&ixlib=rb-4.0.3&q=85"
             alt=""
             className="catagory__image"
           />

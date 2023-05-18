@@ -32,4 +32,7 @@
   .hide-on-desktop {
     display: block;
   }
+  .no-margin-mobile {
+    margin: 0;
+  }
 }

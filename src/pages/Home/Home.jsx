@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../../components/Sections/Hero/Hero";
 import heroImage from "../../assets/hero-img.png";
 import BestSellingProducts from "./BestSellingProducts";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         heroImg={heroImage}
       />
       <BestSellingProducts />
+      <WhyChooseUs />
     </div>
   );
 };

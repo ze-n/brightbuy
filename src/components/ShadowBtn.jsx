@@ -39,9 +39,7 @@ const Wrapper = styled.div`
   }
   /* givingn width to link */
   /* using width instead of padding-inline because going to give it width 80vw for smaller devices */
-  .link {
-    width: 25rem;
-  }
+  width: 25rem;
   /* centering text inside link */
   .link {
     display: flex;
@@ -73,20 +71,18 @@ const Wrapper = styled.div`
     transform: translate(var(--offset), var(--offset));
     transition: transform 0.3s ease;
   }
-  &:hover .shadow {
+  &:where(:hover, :active) .shadow {
     --offset: 0rem;
   }
   transition: transform 0.3s ease;
-  &:hover {
+  &:where(:hover, :active) {
     --offset: 0.4rem;
     transform: translate(var(--offset), var(--offset));
   }
 
   @media screen and (max-width: 470px) {
     /* setting width to adjust according to viewport in smaller devices */
-    .link {
-      width: 80vw;
-    }
+    width: 80vw;
   }
 `;
 export default ShadowBtn;

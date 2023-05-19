@@ -76,6 +76,8 @@ const Wrapper = styled.div`
   .slide {
     font-weight: 600;
     font-size: var(--fs-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
   }
   /*  */
   /* layout */
@@ -119,13 +121,13 @@ const Wrapper = styled.div`
   /*  */
 
   /* this variable stores duration of animation */
-  --anim-time: 15s;
+  --anim-time: 29s;
+  /* this variable represents width of slide in negative. used with translateX */
+  --shift: -15rem;
   .slide-tracker {
     animation: scroll var(--anim-time) linear infinite;
   }
 
-  /* this variable represents width of slide in negative. used with translateX */
-  --shift: -15rem;
   @keyframes scroll {
     from {
       transform: translateX(0);

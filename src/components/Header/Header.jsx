@@ -112,7 +112,6 @@ const Wrapper = styled.header`
   /*  */
   /* layout */
   /*  */
-  --mh-header: 6rem;
   --mw: 1300px;
   width: 100vw;
   min-height: var(--mh-header);

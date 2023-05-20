@@ -6,7 +6,7 @@ import AutoScrollSeal from "../../components/AutoScrollSeal";
 const ClothingLine = () => {
   return (
     <Wrapper>
-      <AutoScrollSeal
+      {/* <AutoScrollSeal
         text="Upto 50% off"
         top="10rem"
         rotate="2deg"
@@ -35,7 +35,7 @@ const ClothingLine = () => {
         top="40rem"
         rotate="-1deg"
         zIndex="4"
-      />
+      /> */}
 
       <div className="container flex-columns">
         <div className="text-container flex-column">

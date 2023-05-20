@@ -40,7 +40,6 @@ const Wrapper = styled.div`
   /* colors */
   /*  */
   img {
-    display: block;
     fill: var(--clr-green-400);
   }
 

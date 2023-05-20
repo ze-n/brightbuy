@@ -33,13 +33,22 @@ body {
   --fs-main-nav: 1.1rem;
   --fs-icon: 1.8rem;
   --fs-title: 3.5rem;
+  --fs-title-lg: 5rem;
   --fs-subtitle: 1.5rem;
-
+  --fs-section-heading: 3rem;
+  --fs-lg-p: 1.3rem;
   /* line heights */
   --lh-title: 4.5rem;
+  --lh-title-lg: 6rem;
   --lh-subtitle: 2rem;
+  --lh-section-heading: 4rem;
+  /*  */
+  /* layout */
+  /*  */
   /* padding */
   --pinline: 3rem;
+  /* this is min height of header */
+  --mh-header: 6rem;
 }
 
 /* media query for 1000px */
@@ -69,10 +78,13 @@ body {
 
     /* special font sizes */
     --fs-title: 2rem;
+    --fs-title-lg: 3rem;
+
     --fs-subtitle: 1.3rem;
     --fs-xxl: 1.8rem;
     /* line heights */
     --lh-title: 2.8rem;
+    --lh-title-lg: 5rem;
     --lh-subtitle: 2rem;
   }
 }

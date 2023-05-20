@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { LeftTextScroll } from "../../components/LeftTextScroll";
-import { RightTextScroll } from "../../components/RightTextScroll";
+import LeftTextScroll from "../../components/LeftTextScroll";
+import RightTextScroll from "../../components/RightTextScroll";
 const Intro = () => {
   return (
     <Wrapper>

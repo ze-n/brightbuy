@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import UserDp from "./UserDp";
 import CartIconButton from "./CartIconButton";
 import ShopDropDown from "./ShopDropDown";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [hamburgerMenu, setHamburgerMenu] = useState(false);
@@ -25,15 +26,15 @@ const Header = () => {
             </a>
           </li>
           <li className="nav__items logo hide-on-mobile">
-            <a href="#" className="nav__link">
+            <Link to="/" className="nav__link">
               <Logo />
-            </a>
+            </Link>
           </li>
 
           <li className="nav__items no-margin">
-            <a href="#" className="nav__link">
+            <Link to="/about" className="nav__link">
               About Us
-            </a>
+            </Link>
           </li>
           <li className="nav__items">
             <a href="#" className="nav__link">
@@ -54,9 +55,9 @@ const Header = () => {
       </nav>
 
       <nav className="mobile-nav hide-on-desktop">
-        <a href="#" className="header-logo ">
+        <Link to="/" className="header-logo ">
           <Logo />
-        </a>
+        </Link>
         <a href="#" className="mobile-nav__link mobile-userDp-btn">
           <UserDp />
         </a>

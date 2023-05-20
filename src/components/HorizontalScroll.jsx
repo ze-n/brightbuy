@@ -121,11 +121,11 @@ const Wrapper = styled.div`
   /*  */
 
   /* this variable stores duration of animation */
-  --anim-time: 29s;
+  --anim-duration: 29s;
   /* this variable represents width of slide in negative. used with translateX */
   --shift: -15rem;
   .slide-tracker {
-    animation: scroll var(--anim-time) linear infinite;
+    animation: scroll var(--anim-duration) linear infinite;
   }
 
   @keyframes scroll {
@@ -146,7 +146,7 @@ const Wrapper = styled.div`
     /*  */
     --slide-width: 10rem;
     --shift: -10rem;
-    --anim-time: 10s;
+    --anim-duration: 10s;
   }
 `;
 export default HorizontalScroll;

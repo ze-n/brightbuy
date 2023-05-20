@@ -1,8 +1,30 @@
 import React from "react";
 import { styled } from "styled-components";
-const LeftTextScroll = ({ text, top, bottom, opacity }) => {
+const LeftTextScroll = ({
+  text,
+  top,
+  bottom,
+  opacity,
+  slideWidth,
+  // shift is width of slide in negative, this is used in animation
+  shift,
+  animDuration,
+  fontSize,
+  fontWeight,
+}) => {
   return (
-    <Wrapper style={{ top: top, bottom: bottom, opacity: opacity }}>
+    <Wrapper
+      style={{
+        top: top,
+        bottom: bottom,
+        opacity: opacity,
+        "--anim-duration": animDuration,
+        "--slide-width": slideWidth,
+        "--shift": shift,
+        "--fs": fontSize,
+        "--fw": fontWeight,
+      }}
+    >
       <div className="slide-tracker">
         <div className="slide">{text}</div>
       </div>
@@ -34,6 +56,9 @@ const Wrapper = styled.div`
   .slide {
     width: var(--slide-width);
   }
+  .slide-tracker {
+    width: var(--slide-width);
+  }
   /* centering text inside slide */
   .slide {
     display: flex;
@@ -41,7 +66,7 @@ const Wrapper = styled.div`
   }
   /* setting up width of wrapper */
   /* since there are two slide in total */
-  width: calc(2 * var(--slide-width));
+  width: calc(2 * var(--slide-width)) !important;
   /* placing slide-tracker side by side */
   display: flex;
 
@@ -55,19 +80,18 @@ const Wrapper = styled.div`
 
   @keyframes leftScroll {
     from {
-      translate: 0;
+      transform: translateX(0);
     }
 
     to {
-      translate: calc(1 * var(--shift));
+      transform: translateX(var(--shift));
     }
   }
-  .slide-tracker {
-    animation: leftScroll var(--anim-duration) infinite linear;
-  }
+
+  animation: leftScroll var(--anim-duration) infinite linear;
 
   @media screen and (max-width: 750px) {
-    --anim-duration: 10s;
+    /* --anim-duration: 10s; */
   }
 `;
 

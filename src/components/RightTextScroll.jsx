@@ -1,25 +1,36 @@
 import React from "react";
 import { styled } from "styled-components";
-const RightTextScroll = ({ text, top, bottom, opacity, slideWidth }) => {
+const RightTextScroll = ({
+  text,
+  top,
+  bottom,
+  opacity,
+  slideWidth,
+  // shift is basically width of slide in negative, this is used in animeation
+  shift,
+  animDuration,
+  fontSize,
+  fontWeight,
+}) => {
   return (
     <Wrapper
       style={{
         top: top,
         bottom: bottom,
         opacity: opacity,
-        width: 2 * slideWidth,
+        "--anim-duration": animDuration,
+        "--slide-width": slideWidth,
+        "--shift": shift,
+        "--fs": fontSize,
+        "--fw": fontWeight,
       }}
     >
       <div className="slide-tracker">
-        <div className="slide" style={{ width: slideWidth }}>
-          {text}
-        </div>
+        <div className="slide">{text}</div>
       </div>
       {/* copy */}
       <div className="slide-tracker">
-        <div className="slide" style={{ width: slideWidth }}>
-          {text}
-        </div>
+        <div className="slide">{text}</div>
       </div>
     </Wrapper>
   );
@@ -45,6 +56,9 @@ const Wrapper = styled.div`
   .slide {
     width: var(--slide-width);
   }
+  .slide-tracker {
+    width: var(--slide-width);
+  }
   /* centering text inside slide */
   .slide {
     display: flex;
@@ -66,18 +80,18 @@ const Wrapper = styled.div`
 
   @keyframes rightScroll {
     from {
-      translate: calc(1 * var(--shift));
+      transform: translateX(var(--shift));
     }
 
     to {
-      translate: 0;
+      transform: translateX(0);
     }
   }
 
   animation: rightScroll var(--anim-duration) infinite linear;
 
   @media screen and (max-width: 750px) {
-    --anim-duration: 10s;
+    /* --anim-duration: 10s !important; */
   }
 `;
 

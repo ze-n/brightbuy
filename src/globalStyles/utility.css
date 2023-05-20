@@ -1,3 +1,26 @@
+/*  */
+/* typography */
+/*  */
+.bold {
+  font-weight: 600;
+}
+/* font-sizes */
+.section-heading {
+  font-size: var(--fs-section-heading);
+  line-height: var(--lh-section-heading);
+}
+.title-large {
+  font-size: var(--fs-title-lg);
+  line-height: var(--lh-title-lg);
+}
+.lg-p-font {
+  font-size: var(--fs-lg-p);
+  line-height: calc(var(--fs-lg-p) + 0.8rem);
+}
+
+/*  */
+/* layout */
+/*  */
 .flex-columns {
   display: flex;
   gap: 2rem;
@@ -5,6 +28,9 @@
 .flex-column {
   flex: 1;
   flex-basis: 100%;
+}
+.flex-column-left {
+  flex-basis: 40%;
 }
 
 .no-margin {
@@ -15,6 +41,7 @@
   max-width: 1300px;
   margin-inline: auto;
 }
+
 /* hiding stuff on large screens */
 .hide-on-desktop {
   display: none;

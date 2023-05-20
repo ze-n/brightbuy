@@ -15,7 +15,7 @@ const ClothingLine = () => {
       <AutoScrollSeal
         text="Upto 50% off"
         top="18rem"
-        rotate="-6deg"
+        rotate="-5deg"
         zIndex="4"
       />
       <AutoScrollSeal
@@ -27,7 +27,7 @@ const ClothingLine = () => {
       <AutoScrollSeal
         text="Upto 50% off"
         top="33rem"
-        rotate="3deg"
+        rotate="3.5deg"
         zIndex="4"
       />
       <AutoScrollSeal
@@ -39,7 +39,7 @@ const ClothingLine = () => {
 
       <div className="container flex-columns">
         <div className="text-container flex-column">
-          <h2 className="title">Unlock Your Style Now</h2>
+          <h2 className="title">Unlock Your Style Now Be Free</h2>
           <ShadowBtn text="Checkout Our Collection" />
         </div>
         <div className="image-container flex-column">
@@ -99,7 +99,7 @@ const Wrapper = styled.section`
 
   /* giving title some width because it looks bad */
   .title {
-    max-width: 6ch;
+    max-width: 10ch;
   }
 
   @media screen and (max-width: 750px) {

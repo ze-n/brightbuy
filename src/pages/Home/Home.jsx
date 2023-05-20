@@ -3,7 +3,8 @@ import Hero from "../../components/Sections/Hero/Hero";
 import heroImage from "../../assets/hero-img.png";
 import BestSellingProducts from "./BestSellingProducts";
 import WhyChooseUs from "./WhyChooseUs";
-
+import HorizontalScroll from "../../components/HorizontalScroll";
+import ClothingLine from "./ClothingLine";
 const Home = () => {
   return (
     <div>
@@ -15,6 +16,8 @@ const Home = () => {
       />
       <BestSellingProducts />
       <WhyChooseUs />
+      <HorizontalScroll />
+      <ClothingLine />
     </div>
   );
 };

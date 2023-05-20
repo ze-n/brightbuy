@@ -33,7 +33,7 @@ const ClothingLine = () => {
       <AutoScrollSeal
         text="Upto 50% off"
         top="40rem"
-        rotate="-2deg"
+        rotate="-1deg"
         zIndex="4"
       />
 
@@ -59,9 +59,11 @@ const Wrapper = styled.section`
   }
 
   /* typography */
+  --fs-title: 70px;
+  --lh-title: 90px;
   .title {
-    font-size: 70px;
-    line-height: 90px;
+    font-size: var(--fs-title);
+    line-height: var(--lh-title);
     font-weight: 900;
     text-align: center;
   }
@@ -105,6 +107,9 @@ const Wrapper = styled.section`
   @media screen and (max-width: 750px) {
     /* increasign padding top on mobile devices */
     --ptop: 4rem;
+    /* reducting font size of title on smaller screens */
+    --fs-title: 55px;
+    --lh-title: 70px;
   }
 `;
 

@@ -1,16 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,500;1,700&family=Montserrat:ital,wght@0,400;0,600;0,800;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,500&display=swap");
 body {
   --clr-white: #ffffff;
   --clr-black-100: rgba(0, 0, 0, 0.02);
   --clr-black: #000000;
   --clr-blue-600: #bbd3d7;
   --clr-blue-400: #aed5dc;
+  --clr-blue-200: #e4e7e7;
   --clr-orange-400: #fea34f;
   --clr-red-700: #ab2b2b;
   --clr-red-500: #df3353;
   --clr-yellow-300: #f8d782;
   --clr-yellow-400: #f4d074;
+  --clr-yellow-500: #ffd848;
   --clr-green-400: #3b443f;
+  --clr-green-450: #16574a;
   --clr-green-500: #252c28;
   --gradient-orange: linear-gradient(to right, #fe7a68, #f69b5a);
   --ff-sans: "Montserrat", sans-serif;

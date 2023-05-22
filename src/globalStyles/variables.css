@@ -4,6 +4,7 @@ body {
   --clr-black-100: rgba(0, 0, 0, 0.02);
   --clr-black: #000000;
   --clr-blue-600: #bbd3d7;
+  --clr-blue-500: #aeedf8;
   --clr-blue-400: #aed5dc;
   --clr-blue-200: #e4e7e7;
   --clr-orange-400: #fea34f;
@@ -16,32 +17,89 @@ body {
   --clr-green-450: #16574a;
   --clr-green-500: #252c28;
   --gradient-orange: linear-gradient(to right, #fe7a68, #f69b5a);
+
+  /* logo color */
+  --clr-logo: var(--clr-blue-500);
+  /* notification colors */
+  --bg-notification: var(--gradient-orange);
+  --clr-notification: var(--clr-black);
+  /* header colors */
+  --bg-header: var(--clr-black);
+  --clr-header: var(--clr-white);
+  /* footer colors */
+  --bg-footer: var(--clr-black);
+  --clr-footer: var(--clr-white);
+  --bg-footer-bottom: var(--clr-green-400);
+  --clr-footer-bottom: var(--clr-white);
+  /* home colors */
+  --bg-home-hero: var(--clr-blue-400);
+  --clr-home-hero: var(--clr-black);
+  --bg-home-best-selling: var(--clr-white);
+  --clr-home-best-selling: var(--clr-black);
+  --clr-home-best-selling-review-name: var(--clr-red-700);
+  --bg-home-why-us: var(--clr-yellow-400);
+  --clr-home-why-us: var(--clr-black);
+  --bg-home-clothing-line: var(--clr-green-450);
+  --clr-home-clothing-line-title: var(--clr-blue-200);
+  /* About colors */
+  --bg-about-intro: var(--clr-black);
+  --clr-about-intro: var(--clr-white);
+  --bg-about-how-started: var(--clr-white);
+  --clr-about-how-started: var(--clr-black);
+  --bg-about-company-values: var(--clr-black);
+  --clr-about-company-values: var(--clr-white);
+
+  /*  */
+  /* font family */
+  /*  */
   --ff-sans: "Montserrat", sans-serif;
-  --ff-serif: "Lora", serif;
 
-  --fs-x-small: 0.7rem;
-  --fs-small: 0.8rem;
-  --fs-regular: 1rem;
-  --fs-medium: 1.2rem;
-  --fs-medium-plus: 1.4rem;
-  --fs-lg: 1.6rem;
-  --fs-xl: 1.8rem;
-  --fs-xxl: 2.2rem;
-
+  /*  */
+  /* font -sizes */
+  /*  */
   /* special font sizes */
+  --fs-cart-counter-small: 0.7rem;
   --fs-logo: 1.6rem;
   --fs-main-nav: 1.1rem;
+  --fs-icon-small: 1.2rem;
   --fs-icon: 1.8rem;
+
+  /* title */
   --fs-title: 3.5rem;
-  --fs-title-lg: 5rem;
-  --fs-subtitle: 1.5rem;
-  --fs-section-heading: 3rem;
-  --fs-lg-p: 1.3rem;
-  /* line heights */
   --lh-title: 4.5rem;
+  /* title large */
+  --fs-title-lg: 5rem;
   --lh-title-lg: 6rem;
+  /* subtitle */
+  --fs-subtitle: 1.5rem;
   --lh-subtitle: 2rem;
-  --lh-section-heading: 4rem;
+  /* section heading small */
+
+  /* section heading small */
+  --fs-section-heading-small: 1.8rem;
+  --lh-section-heading-small: 2.5rem;
+
+  /* section heading */
+  --fs-section-heading: 2.2rem;
+  --lh-section-heading: 3rem;
+  /* section heading large */
+  --fs-section-heading-lg: 3rem;
+  --lh-section-heading-lg: 4rem;
+  /* text small */
+  --fs-text-small: 0.8rem;
+  /* text */
+  --fs-text: 1rem;
+  --lh-text: 1.5rem;
+  /* text medium */
+  --fs-text-medium: 1.2rem;
+  --lh-text-medium: 1.9rem;
+  /* text large */
+  --fs-text-lg: 1.3rem;
+  --lh-text-lg: 2.2rem;
+  /* aside heading */
+  /* this is used in footer and header for heading */
+  --fs-aside-heading: 1.6rem;
+
   /*  */
   /* layout */
   /*  */
@@ -58,14 +116,11 @@ body {
   /* typography */
   /*  */
   body {
-    --fs-medium: 1rem;
-    --fs-lg: 1.4rem;
+    /* special font sizes */
     --fs-logo: 1.3rem;
 
-    /* special font sizes */
+    /* title */
     --fs-title: 3rem;
-
-    /* line heights */
     --lh-title: 3.5rem;
   }
 }
@@ -74,17 +129,22 @@ body {
   /* typography */
   /*  */
   body {
-    --fs-main-nav: 1.5rem;
-
     /* special font sizes */
+    --fs-main-nav: 1.5rem;
+    /* title */
     --fs-title: 2rem;
-    --fs-title-lg: 3rem;
-
-    --fs-subtitle: 1.3rem;
-    --fs-xxl: 1.8rem;
-    /* line heights */
     --lh-title: 2.8rem;
+    /* title large */
+    --fs-title-lg: 3rem;
     --lh-title-lg: 5rem;
+    /* subtitle */
+    --fs-subtitle: 1.3rem;
     --lh-subtitle: 2rem;
+    /* section heading */
+    --fs-section-heading: 1.8rem;
+    --lh-section-heading: 2.4rem;
+    /* section heading large */
+    --fs-section-heading-lg: 2.5rem;
+    --lh-section-heading-lg: 3.6rem;
   }
 }

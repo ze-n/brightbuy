@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   /* color */
   /*  */
   .bright {
-    color: var(--clr-blue-600);
+    color: var(--clr-logo);
   }
 
   /*  */

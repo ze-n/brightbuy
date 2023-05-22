@@ -1,11 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
-import Title from "./Title";
+import ArrowTitle from "./ArrowTitle";
 
 const Catagories = () => {
   return (
-    <Wrapper className="catagory__list" role="list">
-      <Title title="Catagories" />
+    <Wrapper className="catagory__list text-regular" role="list">
+      <ArrowTitle title="Catagories" />
 
       <li className="catagory__item">
         <a href="#" className="catagory__link">
@@ -65,12 +65,11 @@ const Wrapper = styled.ul`
   /*  */
   /* typography */
   /*  */
-  .catagory__title {
-    font-size: var(--fs-medium);
-  }
+
   .catagory__link {
     font-weight: 600;
   }
+
   /*  */
   /* layout */
   /*  */

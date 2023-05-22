@@ -1,12 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-import Title from "../Title";
+import ArrowTitle from "../ArrowTitle";
 import PlainBtn from "../PlainBtn";
 const FooterAbout = () => {
   return (
     <Wrapper>
-      <Title title="Bright Buy" />
-      <p className="footer-about-long-text">
+      <ArrowTitle title="Bright Buy" />
+      <p className="footer-about-long-text text-regular">
         Get the best deals over latest products from various top brands. All in
         one place from clothes to electronics to even food.{" "}
       </p>
@@ -21,9 +21,6 @@ const Wrapper = styled.div`
   /*  */
   /* typography */
   /*  */
-  .footer-about-long-text {
-    line-height: 1.6rem;
-  }
 
   /*  */
   /* layout */

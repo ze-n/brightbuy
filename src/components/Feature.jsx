@@ -4,7 +4,7 @@ const Feature = ({ img, children }) => {
   return (
     <Wrapper>
       <img src={img} alt="" className="icon" />
-      <p className="text">{children}</p>
+      <p className="text text-regular">{children}</p>
     </Wrapper>
   );
 };

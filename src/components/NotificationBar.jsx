@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const NotificationBar = () => {
   return (
     <Wrapper>
-      <p className="text">Free Shipping over $999</p>
+      <p className="text text-small">Free Shipping over $999</p>
     </Wrapper>
   );
 };
@@ -12,11 +12,11 @@ const Wrapper = styled.div`
   /*  */
   /* colors */
   /*  */
-  background: var(--gradient-orange);
+  background: var(--bg-notification);
+  color: var(--clr-notification);
   /*  */
   /* typography */
   /*  */
-  font-size: var(--fs-small);
   font-weight: 600;
   /*  */
   /* layout */

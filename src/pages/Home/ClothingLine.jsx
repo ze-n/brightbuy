@@ -53,17 +53,13 @@ const Wrapper = styled.section`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--clr-green-450);
+  background-color: var(--bg-home-clothing-line);
   .title {
-    color: var(--clr-blue-200);
+    color: var(--clr-home-clothing-line-title);
   }
 
   /* typography */
-  --fs-title: 70px;
-  --lh-title: 90px;
   .title {
-    font-size: var(--fs-title);
-    line-height: var(--lh-title);
     font-weight: 900;
     text-align: center;
   }

@@ -1,12 +1,12 @@
 import React from "react";
 import SocialButtonList from "../SocialButtonList";
 import { styled } from "styled-components";
-import Title from "../Title";
+import ArrowTitle from "../ArrowTitle";
 const FooterContact = () => {
   return (
     <Wrapper>
-      <Title title="Contact Us" />
-      <div className="outlined-links">
+      <ArrowTitle title="Contact Us" />
+      <div className="outlined-links text-regular">
         <a href="#" className="email outlined-link">
           brightbuy@gmail.com
         </a>
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
     /* giving border */
     border: 1px solid var(--clr-white);
     /* creating some space between outlined-link */
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     /* do not want it to take whole width */
     max-width: 25ch;
   }

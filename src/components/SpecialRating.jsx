@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   /* typography */
   /*  */
 
-  font-size: var(--fs-regular);
+  font-size: var(--fs-text);
   font-weight: 600;
   /*  */
   /* layout */
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     /*typography  */
     /*  */
     /* reducing font size because of space issues */
-    font-size: var(--fs-small);
+    font-size: var(--fs-text-small);
     /*  */
     /* layout */
     /*  */

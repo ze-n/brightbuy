@@ -12,11 +12,11 @@ import ShadowBtn from "../../components/ShadowBtn";
 const WhyChooseUs = () => {
   return (
     <Wrapper>
-      <CurvedSection bgColor="var(--clr-yellow-300)">
+      <CurvedSection bgColor="var(--bg-home-why-us)">
         {/* this code will go inside CurvedSection */}
         <div className="why-section">
-          <h2 className="sub-heading">Why Choose Us</h2>
-          <p className="sub-text">
+          <h2 className="section-heading">Why Choose Us</h2>
+          <p className="sub-text text-regular">
             "Never miss a great deal again! With our e-commerce platform, you'll
             always have access to the best offers and discounts."
           </p>
@@ -87,18 +87,17 @@ const WhyChooseUs = () => {
 
 const Wrapper = styled.section`
   /*  */
+  /* colors */
+  /*  */
+  color: var(--clr-home-why-us);
+
+  /*  */
   /* typography */
   /*  */
 
-  .sub-heading {
-    font-size: var(--fs-xxl);
-  }
-  .sub-text {
-    font-size: var(--fs-regular);
-  }
   /* aliging sub text and sub-heading center */
   .sub-text,
-  .sub-heading {
+  .section-heading {
     text-align: center;
   }
   /*  */
@@ -120,7 +119,7 @@ const Wrapper = styled.section`
     align-items: center;
   }
   /* margins */
-  .sub-heading {
+  .section-heading {
     margin-bottom: 1rem;
   }
   .sub-text {

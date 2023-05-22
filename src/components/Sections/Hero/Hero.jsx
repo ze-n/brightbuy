@@ -14,7 +14,7 @@ const Hero = ({ title, subTitle, btnText, heroImg }) => {
               <SpecialRating />
             </div>
             <h1 className="title">{title}</h1>
-            <h2 className="sub-title">{subTitle}</h2>
+            <h2 className="subtitle">{subTitle}</h2>
             <ShadowBtn text={btnText} />
           </div>
           <img src={blob} alt="" className="blob" />
@@ -32,25 +32,19 @@ const Wrapper = styled.section`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--clr-blue-400);
+  background-color: var(--bg-home-hero);
+  color: var(--clr-home-hero);
   /*  */
   /* typography */
   /*  */
-  .title {
-    font-size: var(--fs-title);
-    line-height: var(--lh-title);
-  }
-  .sub-title {
-    font-size: var(--fs-subtitle);
-    line-height: var(--lh-subtitle);
-  }
+
   /*  */
   /* layout */
   /*  */
   /* setting up basic height width */
   min-width: 100vw;
   /* this is given because only one word is left on second line otherwise which looks bad */
-  .sub-title {
+  .subtitle {
     max-width: 25ch;
   }
 
@@ -70,7 +64,7 @@ const Wrapper = styled.section`
   .title {
     margin-bottom: 1rem;
   }
-  .sub-title {
+  .subtitle {
     margin-bottom: 2rem;
   }
   /* reducing size of image-column little bit because it looks better */

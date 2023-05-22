@@ -10,13 +10,14 @@ const BestSellingProducts = () => {
   return (
     <Wrapper>
       {/* bgColor is the  bakground color of Crurved section  */}
-      <CurvedSection bgColor="var(--clr-white)">
-        <h2 className="sub-heading">Best Selling Products</h2>
+      <CurvedSection bgColor="var(--bg-home-best-selling)">
+        <h2 className="section-heading">Best Selling Products</h2>
         <div className="products-review-container">
           <ProductReviewCard
             userName="Martin Luthor"
             userReview="I purchased Cosmic Byte GK-18, It feels so good to type on this thing"
             productImage={img1}
+            nameColor="var(--clr-home-best-selling-review-name)"
           />
           <ProductReviewCard
             userName="Eran Batoski"
@@ -35,18 +36,19 @@ const BestSellingProducts = () => {
 };
 const Wrapper = styled.section`
   /*  */
+  /* colors */
+  /*  */
+  color: var(--clr-home-best-selling);
   /* typography */
   /*  */
-  .sub-heading {
-    font-size: var(--fs-xxl);
-    /* on small screens centering text */
+  .section-heading {
     text-align: center;
   }
   /*  */
   /* layout */
   /*  */
   /* margins */
-  .sub-heading {
+  .section-heading {
     margin-bottom: 4rem;
   }
 

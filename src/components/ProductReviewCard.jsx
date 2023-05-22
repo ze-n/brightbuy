@@ -2,12 +2,21 @@ import React from "react";
 import SpecialCustomerReview from "./SpecialCustomerReview";
 import RatingReviews from "./RatingReviews";
 import { styled } from "styled-components";
-const ProductReviewCard = ({ userName, userReview, productImage }) => {
+const ProductReviewCard = ({
+  userName,
+  userReview,
+  productImage,
+  nameColor,
+}) => {
   return (
     <Wrapper>
       <div className="flex-columns product-review-card">
         <div className="flex-column text-column">
-          <SpecialCustomerReview name={userName} review={userReview} />
+          <SpecialCustomerReview
+            name={userName}
+            review={userReview}
+            nameColor={nameColor}
+          />
         </div>
         <div className="flex-column image-column">
           <img src={productImage} alt="" className="product__image" />

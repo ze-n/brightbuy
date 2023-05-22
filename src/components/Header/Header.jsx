@@ -87,16 +87,17 @@ const Wrapper = styled.header`
   /*  */
   /* colors */
   /*  */
-  background: var(--clr-black);
+  background: var(--bg-header);
+  color: var(--clr-header);
   .nav {
     background-color: inherit;
   }
   a {
-    color: var(--clr-white);
+    color: inherit;
   }
   /* hamburger menu colors */
   .bars {
-    background-color: var(--clr-white);
+    background-color: var(--clr-header);
   }
 
   /*  */

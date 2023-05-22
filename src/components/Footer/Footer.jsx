@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__bottom">
-        <p className="footer__bottom-text container">
+        <p className="footer__bottom-text container text-small">
           Copyright © 2004-2023 BrightBuy.com Solutions Inc. All Rights
           Reserved. All other trademarks and copyrights are the property of
           their respective holders.
@@ -33,18 +33,20 @@ const Wrapper = styled.footer`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--clr-black);
-  color: var(--clr-white);
+  background-color: var(--bg-footer);
+  color: var(--clr-footer);
   /* setting up green background color for footer__bottom */
   .footer__bottom {
-    background-color: var(--clr-green-400);
+    background-color: var(--bg-footer-bottom);
+    color: var(--clr-footer-bottom);
   }
-
+  a {
+    color: inherit;
+  }
   /*  */
   /* typography */
   /*  */
   .footer__bottom-text {
-    font-size: var(--fs-small);
     text-align: center;
   }
   /*  */

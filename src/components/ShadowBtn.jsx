@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const ShadowBtn = ({ text }) => {
   return (
     <Wrapper>
-      <a href="#" className="link">
+      <a href="#" className="link text-medium">
         {text}
       </a>
       <div className="shadow"></div>
@@ -25,7 +25,6 @@ const Wrapper = styled.div`
   /* typography */
   /*  */
   .link {
-    font-size: var(--fs-medium);
     font-weight: 600;
   }
   /*  */

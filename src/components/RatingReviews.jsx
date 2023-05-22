@@ -5,13 +5,13 @@ const RatingReviews = () => {
   return (
     <Wrapper>
       <div className="stars">
-        <AiFillStar className="icon" />
-        <AiFillStar className="icon" />
-        <AiFillStar className="icon" />
-        <AiFillStar className="icon" />
-        <AiFillStar className="icon" />
+        <AiFillStar className="icon text-medium" />
+        <AiFillStar className="icon text-medium" />
+        <AiFillStar className="icon text-medium" />
+        <AiFillStar className="icon text-medium" />
+        <AiFillStar className="icon text-medium" />
       </div>
-      <div className="reviews">50,000+ Reviews</div>
+      <div className="reviews text-regular">50,000+ Reviews</div>
     </Wrapper>
   );
 };
@@ -26,11 +26,8 @@ const Wrapper = styled.div`
   /*  */
   /* typography */
   /*  */
-  .icon {
-    font-size: var(--fs-medium);
-  }
+
   .reviews {
-    font-size: var(--fs-regular);
     font-weight: 600;
   }
   /*  */

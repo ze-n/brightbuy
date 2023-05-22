@@ -38,13 +38,13 @@ const Wrapper = styled.div`
   /* colors */
   /*  */
   .dropdown {
-    background-color: black;
+    background-color: var(--bg-header);
   }
   /*  */
   /* typography */
   /*  */
   .icon {
-    font-size: 1.1rem;
+    font-size: var(--fs-icon-small);
   }
 
   /*  */

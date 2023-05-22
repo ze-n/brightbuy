@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
-import Title from "../Title";
+import ArrowTitle from "../ArrowTitle";
 const BestSellers = () => {
   return (
-    <Wrapper className="product__list" role="list">
-      <Title title="Best Sellers" />
+    <Wrapper className="product__list text-regular" role="list">
+      <ArrowTitle title="Best Sellers" />
       <li className="product__item">
         <a href="#" className="product__link">
           <img
@@ -35,9 +35,6 @@ const Wrapper = styled.ul`
   /*  */
   /* typography */
   /*  */
-  .product__title {
-    font-size: var(--fs-medium);
-  }
 
   /*  */
   /* layout */

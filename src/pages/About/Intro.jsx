@@ -9,17 +9,19 @@ const Intro = () => {
         text="Story Behind Our Business"
         top="0rem"
         opacity=".05"
+        slideWidth="180rem"
+        shift="-180rem"
       />
       <RightTextScroll
         text="Story Behind Our Business"
         bottom="0rem"
         opacity=".05"
+        slideWidth="180rem"
+        shift="-180rem"
       />
 
       <div className="container">
-        <h2 className="title title-large">
-          Elevating Your Shopping Experience
-        </h2>
+        <h2 className="title-lg">Elevating Your Shopping Experience</h2>
       </div>
     </Wrapper>
   );
@@ -29,18 +31,18 @@ const Wrapper = styled.section`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--clr-black);
-  color: var(--clr-white);
+  background-color: var(--bg-about-intro);
+  color: var(--clr-about-intro);
 
   /*  */
   /* typography */
   /*  */
 
-  .title {
+  .title-lg {
     font-weight: 900;
   }
   /* aliging text center */
-  .title {
+  .title-lg {
     text-align: center;
   }
 
@@ -52,7 +54,7 @@ const Wrapper = styled.section`
   /* padding */
   padding-inline: var(--pinline);
   /* giving width so title appears on mulitple lines */
-  .title {
+  .title-lg {
     max-width: 19ch;
   }
   /* setting up container height */
@@ -68,7 +70,7 @@ const Wrapper = styled.section`
     align-items: center;
   }
   /* keeping text always in front */
-  .title {
+  .title-lg {
     position: relative;
     z-index: 2;
   }

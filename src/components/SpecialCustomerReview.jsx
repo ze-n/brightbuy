@@ -1,10 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-const SpecialCustomerReview = ({ name, review }) => {
+const SpecialCustomerReview = ({ name, review, nameColor }) => {
   return (
     <Wrapper>
-      <p className="review">{review}</p>
-      <p className="name">{name}</p>
+      <p className="review text-medium">{review}</p>
+      <p className="name text-medium" style={{ color: nameColor }}>
+        {name}
+      </p>
     </Wrapper>
   );
 };
@@ -21,12 +23,10 @@ const Wrapper = styled.div`
   /*  */
 
   .review {
-    font-size: var(--fs-medium);
     font-weight: 600;
     text-align: center;
   }
   .name {
-    font-size: var(--fs-medium);
     font-weight: 800;
   }
 

@@ -14,11 +14,11 @@ const Wrapper = styled.div`
   /* typography */
   /*  */
   .cart-icon {
-    font-size: 1.8rem;
+    font-size: var(--fs-icon);
     font-weight: 800;
   }
   .counter {
-    font-size: var(--fs-x-small);
+    font-size: var(--fs-cart-counter-small);
   }
 
   /*  */

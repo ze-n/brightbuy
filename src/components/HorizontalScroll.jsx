@@ -4,7 +4,7 @@ import bicep from "../assets/icons/biccp.svg";
 
 const HorizontalScroll = () => {
   return (
-    <Wrapper>
+    <Wrapper className="text-medium">
       <div className="slide-tracker">
         <a href="#" className="slide">
           Shoes
@@ -75,7 +75,6 @@ const Wrapper = styled.div`
   /*  */
   .slide {
     font-weight: 600;
-    font-size: var(--fs-medium);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
   }

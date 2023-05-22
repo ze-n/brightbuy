@@ -6,9 +6,26 @@
 }
 /* font classes */
 /* title */
+.title {
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+}
 .title-lg {
   font-size: var(--fs-title-lg);
   line-height: var(--lh-title-lg);
+}
+.subtitle {
+  font-size: var(--fs-subtitle);
+  line-height: var(--lh-subtitle);
+}
+/* secton heading */
+.section-heading {
+  font-size: var(--fs-section-heading);
+  line-height: var(--lh-section-heading);
+}
+.section-heading-lg {
+  font-size: var(--fs-section-heading-lg);
+  line-height: var(--lh-section-heading-lg);
 }
 /* text */
 .text-small {
@@ -25,15 +42,6 @@
 .text-lg {
   font-size: var(--fs-text-lg);
   line-height: var(--lh-text-lg);
-}
-/* secton heading */
-.section-heading-lg {
-  font-size: var(--fs-section-heading-lg);
-  line-height: var(--lh-section-heading-lg);
-}
-.section-heading {
-  font-size: var(--fs-section-heading);
-  line-height: var(--lh-section-heading);
 }
 /* aside heading */
 .aside-heading {

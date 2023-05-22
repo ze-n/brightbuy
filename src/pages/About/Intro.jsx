@@ -8,16 +8,18 @@ const Intro = () => {
       <LeftTextScroll
         text="Story Behind Our Business"
         top="0rem"
-        opacity=".06"
+        opacity=".05"
       />
       <RightTextScroll
         text="Story Behind Our Business"
         bottom="0rem"
-        opacity=".06"
+        opacity=".05"
       />
 
       <div className="container">
-        <h2 className="title">Elevating Your Shopping Experience</h2>
+        <h2 className="title title-large">
+          Elevating Your Shopping Experience
+        </h2>
       </div>
     </Wrapper>
   );
@@ -35,9 +37,7 @@ const Wrapper = styled.section`
   /*  */
 
   .title {
-    font-size: var(--fs-title);
     font-weight: 900;
-    line-height: var(--lh-title);
   }
   /* aliging text center */
   .title {
@@ -49,7 +49,8 @@ const Wrapper = styled.section`
   /*  */
   position: relative;
   /* will be used by TextScroll */
-
+  /* padding */
+  padding-inline: var(--pinline);
   /* giving width so title appears on mulitple lines */
   .title {
     max-width: 19ch;
@@ -57,6 +58,8 @@ const Wrapper = styled.section`
   /* setting up container height */
   .container {
     min-height: 700px;
+    height: calc(100vh - var(--mh-header));
+    height: calc(100dvh - var(--mh-header));
   }
   /* positioning title center */
   .container {

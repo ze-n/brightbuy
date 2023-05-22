@@ -54,6 +54,9 @@ a {
   text-decoration: none;
   font-size: var(--fs-regular);
 }
+body {
+  font-size: var(--fs-text);
+}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

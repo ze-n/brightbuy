@@ -19,6 +19,7 @@
   line-height: var(--lh-subtitle);
 }
 /* secton heading */
+
 .section-heading {
   font-size: var(--fs-section-heading);
   line-height: var(--lh-section-heading);
@@ -46,6 +47,11 @@
 /* aside heading */
 .aside-heading {
   font-size: var(--fs-aside-heading);
+}
+/* other headings */
+.heading-small {
+  font-size: var(--fs-heading-small);
+  line-height: var(--lh-heading-small);
 }
 /*  */
 /* layout */

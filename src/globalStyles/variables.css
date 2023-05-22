@@ -75,10 +75,6 @@ body {
   --lh-subtitle: 2rem;
   /* section heading small */
 
-  /* section heading small */
-  --fs-section-heading-small: 1.8rem;
-  --lh-section-heading-small: 2.5rem;
-
   /* section heading */
   --fs-section-heading: 2.2rem;
   --lh-section-heading: 3rem;
@@ -99,6 +95,11 @@ body {
   /* aside heading */
   /* this is used in footer and header for heading */
   --fs-aside-heading: 1.6rem;
+  /* other headings */
+  /* heading small */
+  /* used in FeatureCard2 component */
+  --fs-heading-small: 1.4rem;
+  --lh-heading-small: 1.8rem;
 
   /*  */
   /* layout */

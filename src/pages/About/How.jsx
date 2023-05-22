@@ -88,5 +88,13 @@ const Wrapper = styled.section`
     position: relative;
     z-index: 2;
   }
+  @media screen and (max-width: 750px) {
+    /*  */
+    /* typography */
+    /*  */
+    .section-heading-lg {
+      text-align: center;
+    }
+  }
 `;
 export default How;

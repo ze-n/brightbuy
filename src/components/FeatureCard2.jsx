@@ -7,8 +7,8 @@ const FeatureCard2 = ({ icon, title, text }) => {
       <div className="icon-container">
         <img src={icon} alt="icon" />
       </div>
-      <h3 className="heading">{title}</h3>
-      <p className="text">{text}</p>
+      <h3 className="heading-small">{title}</h3>
+      <p className=" text-regular">{text}</p>
     </Wrapper>
   );
 };

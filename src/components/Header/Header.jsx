@@ -37,9 +37,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav__items">
-            <a href="#" className="nav__link">
+            <Link to="/contact" className="nav__link">
               Contact
-            </a>
+            </Link>
           </li>
           <li className="nav__items">
             <a href="#" className="nav__link">
@@ -187,10 +187,11 @@ const Wrapper = styled.header`
     }
 
     /* minimum height of nav */
-    --nav-m-height: calc(100vh - var(--mh-header));
+    --nav-m-height: 800px;
+    --nav-height: calc(100vh - var(--mh-header));
     .nav {
       min-height: var(--nav-m-height);
-      min-height: var(--nav-m-height);
+      height: var(--nav-height);
     }
     /* placing nav for smaller devices */
     .nav {
@@ -211,7 +212,7 @@ const Wrapper = styled.header`
     /* increasing height of nav__list */
     .nav__list {
       min-height: var(--nav-m-height);
-      min-height: var(--nav-m-height);
+      height: var(--nav-height);
     }
     /* arranging flex children i.e, nav__items to be shown towards right direction */
     .nav__list {

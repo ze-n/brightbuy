@@ -39,6 +39,7 @@ const Wrapper = styled.div`
   /*  */
   .dropdown {
     background-color: var(--bg-header);
+    background-color: red;
   }
   /*  */
   /* typography */
@@ -77,6 +78,9 @@ const Wrapper = styled.div`
     z-index: 1;
   }
 
+  /*  */
+  /* animation */
+  /*  */
   /* menu Open Close css  */
   .dropdown {
     clip-path: circle(0% at 11% 0);

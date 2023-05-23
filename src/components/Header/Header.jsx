@@ -13,10 +13,21 @@ const Header = () => {
     <Wrapper>
       <nav
         className={hamburgerMenu ? "nav container nav-open" : "nav container"}
+        onClick={() => {
+          setHamburgerMenu(!hamburgerMenu);
+        }}
       >
         <ul className="nav__list" role="list">
           <li className="nav__items no-margin">
-            <a href="#" className="nav__link">
+            <a
+              href="#"
+              className="nav__link"
+              onClick={(e) => {
+                setHamburgerMenu(hamburgerMenu);
+                // this makes sure that when clicked click event of parent i.e, nav also not trigger
+                e.stopPropagation();
+              }}
+            >
               <ShopDropDown />
             </a>
           </li>

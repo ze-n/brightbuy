@@ -39,7 +39,6 @@ const Wrapper = styled.div`
   /*  */
   .dropdown {
     background-color: var(--bg-header);
-    background-color: red;
   }
   /*  */
   /* typography */

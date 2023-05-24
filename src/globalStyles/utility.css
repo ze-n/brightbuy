@@ -53,6 +53,15 @@
   font-size: var(--fs-heading-small);
   line-height: var(--lh-heading-small);
 }
+/* labels */
+
+.label-text {
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+}
+
+/* placeholder */
+
 /*  */
 /* layout */
 /*  */

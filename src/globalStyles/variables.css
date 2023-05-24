@@ -19,7 +19,7 @@ body {
   --gradient-orange: linear-gradient(to right, #fe7a68, #f69b5a);
 
   /* logo color */
-  --clr-logo: var(--clr-blue-500);
+  --clr-logo: var(--clr-white);
   /* notification colors */
   --bg-notification: var(--gradient-orange);
   --clr-notification: var(--clr-black);
@@ -48,6 +48,11 @@ body {
   --clr-about-how-started: var(--clr-black);
   --bg-about-company-values: var(--clr-black);
   --clr-about-company-values: var(--clr-white);
+  /* Contact colors */
+  --bg-contact-page: var(--clr-black);
+  --clr-contact-page: var(--clr-white);
+  --bg-contact-form: var(--clr-black);
+  --clr-contact-form: var(--clr-white);
 
   /*  */
   /* font family */
@@ -63,7 +68,7 @@ body {
   --fs-main-nav: 1.1rem;
   --fs-icon-small: 1.2rem;
   --fs-icon: 1.8rem;
-
+  --fs-icon-lg: 2.1rem;
   /* title */
   --fs-title: 3.5rem;
   --lh-title: 4.5rem;
@@ -101,6 +106,17 @@ body {
   --fs-heading-small: 1.4rem;
   --lh-heading-small: 1.8rem;
 
+  /* labels */
+  /* label */
+  --fs-label: 0.9rem;
+  --lh-label: 1.5rem;
+  /* input text */
+  --fs-input: 1rem;
+  --lh-input: 1.2rem;
+  /* placeholder */
+
+  --fs-placeholder: 1rem;
+  --lh-placeholder: 1.6rem;
   /*  */
   /* layout */
   /*  */
@@ -123,6 +139,9 @@ body {
     /* title */
     --fs-title: 3rem;
     --lh-title: 3.5rem;
+    /* aside heading */
+    --fs-aside-heading: 1.4rem;
+    /* label */
   }
 }
 @media screen and (max-width: 750px) {
@@ -147,5 +166,18 @@ body {
     /* section heading large */
     --fs-section-heading-lg: 2.5rem;
     --lh-section-heading-lg: 3.6rem;
+    /* aside heading */
+    --fs-aside-heading: 1.3rem;
+
+    /* label */
+    --fs-label: 0.8rem;
+    /* placeholder */
+    --fs-placeholder: 0.9rem;
+    --lh-placeholder: 1.5rem;
+
+    /*  */
+    /* layout */
+    /*  */
+    --pinline: 2rem;
   }
 }

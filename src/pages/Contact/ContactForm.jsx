@@ -169,6 +169,12 @@ const Wrapper = styled.form`
     /* want to reduce padding inline of form on smaller devices */
     padding-inline: var(--pinline);
   }
+  @media screen and (max-width: 750px) {
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
 `;
 
 export default ContactForm;

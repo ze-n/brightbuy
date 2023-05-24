@@ -58,9 +58,9 @@ const Header = () => {
             </a>
           </li>
           <li className="nav__items">
-            <a href="#" className="nav__link">
+            <Link to="/cart" className="nav__link">
               <CartIconButton />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -72,9 +72,9 @@ const Header = () => {
         <a href="#" className="mobile-nav__link mobile-userDp-btn">
           <UserDp />
         </a>
-        <a href="#" className="mobile-nav__link mobile-cart-btn">
+        <Link to="/cart" className="mobile-nav__link mobile-cart-btn">
           <CartIconButton />
-        </a>
+        </Link>
         <div
           className={
             hamburgerMenu

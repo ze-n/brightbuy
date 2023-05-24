@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import NotificationBar from "./components/NotificationBar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" Component={Home}></Route>
           <Route path="/about" Component={About}></Route>
+          <Route path="/contact" Component={Contact}></Route>
         </Routes>
       </Router>
       <Footer />

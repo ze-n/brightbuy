@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <Wrapper>
       <img src={LogoIcon} alt="" className="icon" />
-      <span className="bright">Bright</span>Buy
+      <span className="bright">bright</span>buy
     </Wrapper>
   );
 };

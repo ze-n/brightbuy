@@ -97,6 +97,8 @@ const Wrapper = styled.form`
     font-weight: 600;
   }
   /* setting up font for placeholder */
+  input,
+  textarea,
   ::placeholder {
     font-weight: 400;
     font-size: var(--fs-placeholder);

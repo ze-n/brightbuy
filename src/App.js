@@ -8,7 +8,7 @@ import NotificationBar from "./components/NotificationBar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-
+import Cart from "./pages/Cart/Cart";
 function App() {
   return (
     <div className="App">
@@ -19,6 +19,7 @@ function App() {
           <Route path="/" Component={Home}></Route>
           <Route path="/about" Component={About}></Route>
           <Route path="/contact" Component={Contact}></Route>
+          <Route path="/cart" Component={Cart}></Route>
         </Routes>
       </Router>
       <Footer />

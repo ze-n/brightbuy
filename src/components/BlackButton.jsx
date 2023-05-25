@@ -24,10 +24,14 @@ const Wrapper = styled.a`
   /* display block because want it to take all available width */
   display: block;
   /* padding */
-  padding-inline: 2rem;
+  padding-inline: 1rem;
   padding-block: 1rem;
   /* border radius */
   border-radius: 1rem;
+
+  @media screen and (max-width: 750px) {
+    font-size: 1rem;
+  }
 `;
 
 export default BlackButton;

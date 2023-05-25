@@ -42,6 +42,7 @@ body {
   --bg-home-clothing-line: var(--clr-green-450);
   --clr-home-clothing-line-title: var(--clr-blue-200);
   /* About colors */
+  width: 100%;
   --bg-about-intro: var(--clr-black);
   --clr-about-intro: var(--clr-white);
   --bg-about-how-started: var(--clr-white);
@@ -53,6 +54,12 @@ body {
   --clr-contact-page: var(--clr-white);
   --bg-contact-form: var(--clr-black);
   --clr-contact-form: var(--clr-white);
+
+  /* Cart page */
+  --bg-cart-page: var(--clr-white);
+  --clr-cart-page: var(--clr-black);
+  --bg-cart-card: var(--clr-white);
+  --clr-cart-card: var(--clr-black);
 
   /*  */
   /* font family */

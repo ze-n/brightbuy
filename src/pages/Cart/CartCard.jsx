@@ -23,7 +23,11 @@ const CartCard = () => {
       </div>
       {/* checkout button */}
       <div className="checkout-btn">
-        <BlackButton text="Proceed to checkout" />
+        <BlackButton
+          text="Proceed to checkout"
+          scale=".95"
+          animDuration=".3s"
+        />
       </div>
     </Wrapper>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
-const BlackButton = ({ text, scale, animDuration }) => {
+const BlackButton = ({ children, scale, animDuration }) => {
   return (
     <Wrapper style={{ "--scale": scale, "--anim-duration": animDuration }}>
-      {text}
+      {children}
     </Wrapper>
   );
 };

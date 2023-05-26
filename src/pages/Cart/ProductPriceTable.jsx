@@ -200,10 +200,13 @@ const Wrapper = styled.div`
     .mobile-table {
       width: 100%;
     }
-    /* making row to take entire width and put extra space available between its children */
     tr {
+      /* making row to take entire and place its child on same row. */
       display: flex;
+      /* row takes entire width and put extra space available between its children */
       justify-content: space-between;
+      /* align childs vertically center */
+      align-items: center;
     }
     /* reducing paddng inline to .5rem from 1rem because of less space */
     td,

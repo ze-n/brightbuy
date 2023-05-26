@@ -96,7 +96,7 @@ const Wrapper = styled.div`
   }
   @media screen and (max-width: 500px) {
     /* reducing font-sizes because of space issues */
-    --fs-cart-total-heading: 1.2rem;
+    --fs-cart-totals-heading: 1.2rem;
     --fs-cart-total: 1rem;
   }
   @media screen and (max-width: 350px) {

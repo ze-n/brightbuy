@@ -1,7 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
-const BlackButton = ({ text }) => {
-  return <Wrapper>{text}</Wrapper>;
+const BlackButton = ({ text, scale, animDuration }) => {
+  return (
+    <Wrapper style={{ "--scale": scale, "--anim-duration": animDuration }}>
+      {text}
+    </Wrapper>
+  );
 };
 const Wrapper = styled.a`
   /*  */
@@ -28,6 +32,18 @@ const Wrapper = styled.a`
   padding-block: 1rem;
   /* border radius */
   border-radius: 1rem;
+
+  /*  */
+  /* animation */
+  /*  */
+  --scale: 0.95;
+  --anim-duration: 0.3s;
+  transition: transform var(--anim-duration) ease;
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(var(--scale));
+  }
 
   @media screen and (max-width: 750px) {
     font-size: 1rem;

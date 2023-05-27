@@ -64,12 +64,14 @@ const ContactForm = () => {
         </span>
       </div>
       <ArrowBtn
-        text="Submit"
         fw="600"
-        arrowWidth="4.2rem"
+        arrowWidth="4.6rem"
         animDuration=".2s"
-        animeScale="1.5"
-      />
+        animeScale="1.2"
+        arrowHeight=".6rem"
+      >
+        Submit
+      </ArrowBtn>
     </Wrapper>
   );
 };

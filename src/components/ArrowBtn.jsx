@@ -2,17 +2,25 @@ import React from "react";
 import { styled } from "styled-components";
 import arrow from "../assets/icons/arrow.svg";
 
-const ArrowBtn = ({ text, fw, arrowWidth, animDuration, animeScale }) => {
+const ArrowBtn = ({
+  children,
+  fw,
+  arrowWidth,
+  arrowHeight,
+  animDuration,
+  animeScale,
+}) => {
   return (
     <Wrapper
       style={{
-        fontWeight: fw,
+        "--fw": fw,
         "--arrow-width": arrowWidth,
+        "--arrow-height": arrowHeight,
         "--anim-duration": animDuration,
         "--anim-scale": animeScale,
       }}
     >
-      <p className="text">{text}</p>
+      <p className="text">{children}</p>
       <img src={arrow} className="arrow"></img>
     </Wrapper>
   );
@@ -29,7 +37,8 @@ const Wrapper = styled.button`
   /*  */
   /* typography */
   /*  */
-  font-weight: 600;
+  --fw: 600;
+  font-weight: var(--fw);
 
   /*  */
   /* layout */
@@ -40,10 +49,13 @@ const Wrapper = styled.button`
   align-items: start;
 
   /*  setting up arrow width */
+  --arrow-height: 1rem;
   --arrow-width: 80%;
-
   .arrow {
     width: var(--arrow-width);
+    height: var(--arrow-height);
+    object-fit: cover;
+    object-position: right;
   }
 
   /*  */

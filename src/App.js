@@ -9,6 +9,8 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import Error from "./pages/Error/Error";
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,8 @@ function App() {
           <Route path="/about" Component={About}></Route>
           <Route path="/contact" Component={Contact}></Route>
           <Route path="/cart" Component={Cart}></Route>
+          <Route path="/singleproduct" Component={SingleProductPage}></Route>
+          <Route path="/*" Component={Error}></Route>
         </Routes>
       </Router>
       <Footer />

@@ -20,6 +20,7 @@ body {
 
   /* logo color */
   --clr-logo: var(--clr-white);
+  --clr-rating-stars: var(--clr-orange-400);
   /* notification colors */
   --bg-notification: var(--gradient-orange);
   --clr-notification: var(--clr-black);

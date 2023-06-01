@@ -11,6 +11,7 @@ import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import Error from "./pages/Error/Error";
+import Products from "./pages/Products/Products";
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" Component={Contact}></Route>
           <Route path="/cart" Component={Cart}></Route>
           <Route path="/singleproduct" Component={SingleProductPage}></Route>
+          <Route path="/products" Component={Products}></Route>
           <Route path="/*" Component={Error}></Route>
         </Routes>
       </Router>

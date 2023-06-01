@@ -66,6 +66,10 @@ body {
   --bg-error-page: var(--clr-black);
   --clr-error-page: var(--clr-white);
 
+  /* product page */
+  --bg-product-page: var(--clr-white);
+  --clr-product-page: var(--clr-black);
+
   /*  */
   /* font family */
   /*  */

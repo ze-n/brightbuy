@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
-import UserDp from "./UserDp";
+import User from "./User";
 import CartIconButton from "./CartIconButton";
 import ShopDropDown from "./ShopDropDown";
 import { Link } from "react-router-dom";
@@ -52,9 +52,16 @@ const Header = () => {
               Contact
             </Link>
           </li>
-          <li className="nav__items">
+          <li
+            className="nav__items"
+            onClick={(e) => {
+              setHamburgerMenu(hamburgerMenu);
+              // this makes sure that when clicked click event of parent i.e, nav also not trigger
+              e.stopPropagation();
+            }}
+          >
             <a href="#" className="nav__link">
-              <UserDp />
+              <User />
             </a>
           </li>
           <li className="nav__items">
@@ -70,7 +77,7 @@ const Header = () => {
           <Logo />
         </Link>
         <a href="#" className="mobile-nav__link mobile-userDp-btn">
-          <UserDp />
+          <User />
         </a>
         <Link to="/cart" className="mobile-nav__link mobile-cart-btn">
           <CartIconButton />

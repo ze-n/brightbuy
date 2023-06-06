@@ -4,9 +4,11 @@ import UserDp from "./UserDp";
 import { Link } from "react-router-dom";
 
 const User = () => {
+  // this state decides if user-menu will be shown or not
   const [showUserMenu, setShowUserMenu] = useState("false");
   return (
     <Wrapper>
+      {/* user dp */}
       <div
         className="user-dp"
         onClick={() => {
@@ -15,6 +17,7 @@ const User = () => {
       >
         <UserDp />
       </div>
+      {/* user-menu */}
       <div
         className={showUserMenu ? "user-menu" : "user-menu show-user-menu"}
         onClick={() => {
@@ -78,10 +81,12 @@ const Wrapper = styled.div`
   /* animation */
   /*  */
 
+  /* hide user-menu by default */
   .user-menu {
     clip-path: circle(0.4% at 100% 0);
     transition: clip-path 0.3s ease;
   }
+  /* show user menu */
   .show-user-menu {
     clip-path: circle(141.4% at 100% 0);
   }

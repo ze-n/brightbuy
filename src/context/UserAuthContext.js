@@ -34,17 +34,18 @@ const UserAuthProvider = ({ children }) => {
       setCurrentUser(user);
       // set verifyEmail state to the emailVerified property of user object
       setVerifyEmail(user.emailVerified);
-      console.log(verifyEmail + "in mail");
+      console.log(verifyEmail + " in mail");
       console.log("u are logging");
     } else {
-      // alert("u are logout")
+      setCurrentUser(null);
     }
   });
 
   // profile information store
   // used to store profile information in firestore
 
-  const profileInformation = (profile) => {
+  const ProfileInformation = (profile) => {
+    console.log("storing");
     return addDoc(collection(fs, "profile"), profile);
   };
 
@@ -68,7 +69,7 @@ const UserAuthProvider = ({ children }) => {
     currentUser,
     UserLogin,
     UserLogout,
-    profileInformation,
+    ProfileInformation,
     verifyEmail,
   };
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

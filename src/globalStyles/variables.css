@@ -70,6 +70,10 @@ body {
   --bg-product-page: var(--clr-white);
   --clr-product-page: var(--clr-black);
 
+  /* login page */
+  --bg-login-page: var(--clr-black);
+  --clr-login-page: var(--clr-white);
+
   /*  */
   /* font family */
   /*  */

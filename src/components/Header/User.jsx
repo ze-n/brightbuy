@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import UserDp from "./UserDp";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/UserAuthContext";
 
 const User = () => {
+  const { currentUser, UserLogout } = useAuth();
   // this state decides if user-menu will be shown or not
   const [showUserMenu, setShowUserMenu] = useState("false");
   return (
@@ -24,9 +26,16 @@ const User = () => {
           setShowUserMenu(!showUserMenu);
         }}
       >
-        <Link to="/login" className="user-menu__link">
-          Log in
-        </Link>
+        {!currentUser && (
+          <Link to="/login" className="user-menu__link">
+            Log in
+          </Link>
+        )}
+        {currentUser && (
+          <Link to="/" className="user-menu__link" onClick={() => UserLogout()}>
+            Log Out
+          </Link>
+        )}
         <Link className="user-menu__link">Update</Link>
       </div>
     </Wrapper>
@@ -65,6 +74,7 @@ const Wrapper = styled.div`
     right: 0;
     top: 4rem;
     z-index: 5;
+    width: max-content;
   }
   .user-menu {
     border: 1px solid;

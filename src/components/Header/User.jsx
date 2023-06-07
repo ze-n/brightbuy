@@ -36,9 +36,11 @@ const User = () => {
             Log Out
           </Link>
         )}
-        <Link className="user-menu__link" to="/update">
-          Update
-        </Link>
+        {currentUser && (
+          <Link className="user-menu__link" to="/update">
+            Update
+          </Link>
+        )}
       </div>
     </Wrapper>
   );

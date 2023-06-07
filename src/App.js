@@ -14,6 +14,7 @@ import Error from "./pages/Error/Error";
 import Products from "./pages/Products/Products";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import Update from "./pages/Update/Update";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
           <Route path="/products" Component={Products}></Route>
           <Route path="/login" Component={Login}></Route>
           <Route path="/signup" Component={Signup}></Route>
+          <Route path="/update" Component={Update}></Route>
           <Route path="/*" Component={Error}></Route>
         </Routes>
       </Router>

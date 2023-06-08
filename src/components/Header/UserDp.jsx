@@ -13,7 +13,7 @@ const UserDp = () => {
       // if user is logged in updating UserAvtar to photoURL of currentUser
       setUserAvatar(currentUser.photoURL);
     }
-  }, [currentUser, currentUser.photoURL]);
+  }, [currentUser]);
   return (
     <Wrapper>
       <img src={userAvatar} alt="Avatar" />

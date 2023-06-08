@@ -64,11 +64,15 @@ const UserAuthProvider = ({ children }) => {
 
   // sign User
   const SignUp = async (email, password, FullName) => {
-    createUserWithEmailAndPassword(auth, email, password).then((res) => {
-      updateProfile(res.user, {
-        displayName: FullName,
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        updateProfile(res.user, {
+          displayName: FullName,
+        });
+      })
+      .catch((error) => {
+        console.log("error occured while signing up ", error);
       });
-    });
   };
   // storage
 

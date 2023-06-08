@@ -27,10 +27,16 @@ const User = () => {
         }}
       >
         {!currentUser && (
+          <Link to="/signup" className="user-menu__link">
+            Sign up
+          </Link>
+        )}
+        {!currentUser && (
           <Link to="/login" className="user-menu__link">
             Log in
           </Link>
         )}
+
         {currentUser && (
           <Link to="/" className="user-menu__link" onClick={() => UserLogout()}>
             Log Out
@@ -70,9 +76,11 @@ const Wrapper = styled.div`
   position: relative;
   /* this will be used to position user-menu */
 
+  /* want links to appear on seperate lines */
   .user-menu__link {
     display: block;
   }
+  /* positioning user-menu and also giving it width */
   .user-menu {
     position: absolute;
     right: 0;
@@ -80,6 +88,7 @@ const Wrapper = styled.div`
     z-index: 5;
     width: max-content;
   }
+  /* border */
   .user-menu {
     border: 1px solid;
   }

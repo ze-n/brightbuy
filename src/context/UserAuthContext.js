@@ -8,9 +8,11 @@ import {
   signOut,
   // getAuth,
   // sendEmailVerification,
+  updateProfile,
 } from "firebase/auth";
-import { auth, fs } from "../Config/Config";
+import { auth, fs, storage } from "../Config/Config";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { ref, byteUpload, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // created userContext
 const userContext = createContext();
@@ -61,8 +63,40 @@ const UserAuthProvider = ({ children }) => {
   };
 
   // sign User
-  const SignUp = async (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const SignUp = async (email, password, FullName) => {
+    createUserWithEmailAndPassword(auth, email, password).then((res) => {
+      updateProfile(res.user, {
+        displayName: FullName,
+      });
+    });
+  };
+  // storage
+
+  // upload
+  const UploadAvatar = async (file, currentUser, setLoading) => {
+    setLoading(true);
+    const fileRef = ref(storage, currentUser.uid + ".png");
+    const snapshot = await uploadBytes(fileRef, file);
+    const photoURL = await getDownloadURL(fileRef);
+    await updateProfile(currentUser, {
+      photoURL,
+    });
+    setLoading(false);
+    console.log("photo urL ", currentUser.photoURL);
+    console.log("snapshot ", snapshot);
+    alert("uploaded file");
+  };
+  const UpdateName = async (currentUser, userName, setLoading) => {
+    setLoading(true);
+    updateProfile(currentUser, {
+      displayName: userName,
+    })
+      .then(() => {
+        alert("user name changed");
+      })
+      .catch((error) => {
+        console.log("error updating name ", error);
+      });
   };
   const value = {
     SignUp,
@@ -71,6 +105,8 @@ const UserAuthProvider = ({ children }) => {
     UserLogout,
     ProfileInformation,
     verifyEmail,
+    UploadAvatar,
+    UpdateName,
   };
   return <userContext.Provider value={value}>{children}</userContext.Provider>;
 };

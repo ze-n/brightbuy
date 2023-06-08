@@ -74,6 +74,10 @@ body {
   --bg-login-page: var(--clr-black);
   --clr-login-page: var(--clr-white);
 
+  /* update page */
+  --bg-update-page: var(--clr-black);
+  --clr-update-page: var(--clr-white);
+
   /*  */
   /* font family */
   /*  */

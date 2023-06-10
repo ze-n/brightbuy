@@ -102,6 +102,20 @@ const UserAuthProvider = ({ children }) => {
       .catch((error) => {
         console.log("error updating name ", error);
       });
+    setLoading(false);
+  };
+  const UpdateEmail = async (currentUser, userEmail, setLoading) => {
+    setLoading(true);
+    updateProfile(currentUser, {
+      email: userEmail,
+    })
+      .then(() => {
+        alert("user email changed");
+      })
+      .catch((error) => {
+        console.log("something went wrong while changing email ", error);
+      });
+    setLoading(false);
   };
   const value = {
     SignUp,
@@ -112,6 +126,7 @@ const UserAuthProvider = ({ children }) => {
     verifyEmail,
     UploadAvatar,
     UpdateName,
+    UpdateEmail,
   };
   return <userContext.Provider value={value}>{children}</userContext.Provider>;
 };

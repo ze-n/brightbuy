@@ -66,14 +66,13 @@ const Wrapper = styled.div`
     display: block;
   }
   /* margins */
-  .userDp-label {
-    margin-bottom: 1.5rem;
-  }
+  --margin: 1.5rem;
+  .userDp-label,
   .input {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--margin);
   }
   .upload-btn {
-    margin-top: 1.5rem;
+    margin-top: var(--margin);
   }
 `;
 

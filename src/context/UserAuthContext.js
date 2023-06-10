@@ -46,9 +46,10 @@ const UserAuthProvider = ({ children }) => {
   // profile information store
   // used to store profile information in firestore
 
+  const docRef = null;
   const ProfileInformation = (profile) => {
     console.log("storing");
-    return addDoc(collection(fs, "profile"), profile);
+    docRef = addDoc(collection(fs, "profile"), profile);
   };
 
   // Login Functinallity
@@ -71,7 +72,7 @@ const UserAuthProvider = ({ children }) => {
         });
       })
       .catch((error) => {
-        console.log("error occured while signing up ", error);
+        console.log("error occured during sign up ", error);
       });
   };
   // storage
@@ -86,8 +87,8 @@ const UserAuthProvider = ({ children }) => {
       photoURL,
     });
     setLoading(false);
-    console.log("photo urL ", currentUser.photoURL);
-    console.log("snapshot ", snapshot);
+    // console.log("photo urL ", currentUser.photoURL);
+    // console.log("snapshot ", snapshot);
     alert("uploaded file");
   };
   const UpdateName = async (currentUser, userName, setLoading) => {

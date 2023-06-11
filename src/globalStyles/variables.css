@@ -24,6 +24,7 @@ body {
   /* notification colors */
   --bg-notification: var(--gradient-orange);
   --clr-notification: var(--clr-black);
+  --clr-error: var(--clr-red-500);
   /* header colors */
   --bg-header: var(--clr-black);
   --clr-header: var(--clr-white);

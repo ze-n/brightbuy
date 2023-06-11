@@ -144,6 +144,10 @@ const Wrapper = styled.section`
   .form {
     border-color: #999 !important;
   }
+  .error {
+    color: var(--clr-error);
+  }
+
   /*  */
   /* typography */
   /*  */
@@ -155,12 +159,15 @@ const Wrapper = styled.section`
     font-size: var(--fs-label);
     font-weight: 600;
   }
+
   /* or sign up adding that wavy underline */
-  .signup {
+  .signup,
+  .error {
     font-weight: 600;
     text-decoration: underline wavy 2px;
     text-underline-offset: 0.4rem;
   }
+
   /*  */
   /* layout */
   /*  */
@@ -206,6 +213,9 @@ const Wrapper = styled.section`
   }
   .signup-container {
     margin-top: 1rem;
+  }
+  .error {
+    margin-bottom: 1rem;
   }
   /* states */
   input:focus,

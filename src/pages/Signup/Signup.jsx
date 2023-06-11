@@ -198,6 +198,9 @@ const Wrapper = styled.section`
   .form {
     border-color: #999 !important;
   }
+  .error {
+    color: var(--clr-error);
+  }
   /*  */
   /* typography */
   /*  */
@@ -210,7 +213,8 @@ const Wrapper = styled.section`
     font-weight: 600;
   }
   /* or sign up adding that wavy underline */
-  .login {
+  .login,
+  .error {
     font-weight: 600;
     text-decoration: underline wavy 2px;
     text-underline-offset: 0.4rem;
@@ -260,6 +264,9 @@ const Wrapper = styled.section`
   }
   .login-container {
     margin-top: 1rem;
+  }
+  .error {
+    margin-bottom: 1rem;
   }
   /* states */
   input:focus,

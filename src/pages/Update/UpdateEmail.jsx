@@ -2,46 +2,46 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/UserAuthContext";
 import { styled } from "styled-components";
 const UpdateName = () => {
-  const { currentUser, UpdateName, storeOrUpdateUserData } = useAuth();
-  const [userName, setUserName] = useState("");
-  const [newName, setNewName] = useState("");
+  const { currentUser, UpdateEmail, storeOrUpdateUserData } = useAuth();
+  const [userEmail, setUserEmail] = useState("");
+  const [newEmail, setNewEmail] = useState("");
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     if (currentUser) {
-      setUserName(currentUser.displayName);
-      console.log("name is ", currentUser.displayName);
+      setUserEmail(currentUser.email);
+      console.log("Email is ", currentUser.email);
     }
   }, [currentUser]);
   const handleChange = (e) => {
-    setNewName(e.target.value);
-    console.log(newName);
+    setNewEmail(e.target.value);
+    console.log(newEmail);
   };
   const handleClick = () => {
-    UpdateName(currentUser, newName, setLoading);
+    UpdateEmail(currentUser, newEmail, setLoading);
   };
   return (
     <Wrapper>
-      <label htmlFor="newname" className="newname-label">
-        Update Name
+      <label htmlFor="newemail" className="newemail-label">
+        Update Email
       </label>
       {currentUser && (
-        <p className="oldname">
-          <span className="bold">Old Name : </span>
-          {userName}
+        <p className="oldemail">
+          <span className="bold">Old Email : </span>
+          {userEmail}
         </p>
       )}
       <input
-        type="text"
-        name="FullName"
-        id="newname"
+        type="email"
+        name="email"
+        id="newemail"
         onChange={handleChange}
-        placeholder="Write new name"
+        placeholder="Write new email"
       />
       <button
-        disabled={newName.trim().length < 4 && !isLoading}
+        disabled={newEmail.trim().length < 4 && !isLoading}
         onClick={handleClick}
       >
-        Update name
+        Update Email
       </button>
     </Wrapper>
   );
@@ -91,9 +91,9 @@ const Wrapper = styled.div`
   }
   /* margins*/
   --margin: 1.5rem;
-  .newname-label,
-  .oldname,
-  #newname {
+  .newemail-label,
+  .oldemail,
+  #newemail {
     margin-bottom: var(--margin);
   }
 `;

@@ -2,46 +2,46 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/UserAuthContext";
 import { styled } from "styled-components";
 const UpdateName = () => {
-  const { currentUser, UpdateName, storeOrUpdateUserData } = useAuth();
-  const [userName, setUserName] = useState("");
-  const [newName, setNewName] = useState("");
+  const { currentUser, UpdatePassword, storeOrUpdateUserData } = useAuth();
+  const [userPassword, setUserPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     if (currentUser) {
-      setUserName(currentUser.displayName);
-      console.log("name is ", currentUser.displayName);
+      setUserPassword(currentUser.password);
+      console.log("password is ", currentUser.password);
     }
   }, [currentUser]);
   const handleChange = (e) => {
-    setNewName(e.target.value);
-    console.log(newName);
+    setNewPassword(e.target.value);
+    console.log(newPassword);
   };
   const handleClick = () => {
-    UpdateName(currentUser, newName, setLoading);
+    UpdatePassword(currentUser, newPassword, setLoading);
   };
   return (
     <Wrapper>
-      <label htmlFor="newname" className="newname-label">
-        Update Name
+      <label htmlFor="newpassword" className="newpassword-label">
+        Update Password
       </label>
       {currentUser && (
-        <p className="oldname">
-          <span className="bold">Old Name : </span>
-          {userName}
+        <p className="oldpassword">
+          <span className="bold">Old Password : </span>
+          {userPassword}
         </p>
       )}
       <input
-        type="text"
-        name="FullName"
-        id="newname"
+        type="password"
+        name="password"
+        id="newpassword"
         onChange={handleChange}
-        placeholder="Write new name"
+        placeholder="Write new password"
       />
       <button
-        disabled={newName.trim().length < 4 && !isLoading}
+        disabled={newPassword.trim().length < 4 && !isLoading}
         onClick={handleClick}
       >
-        Update name
+        Update Password
       </button>
     </Wrapper>
   );
@@ -91,9 +91,9 @@ const Wrapper = styled.div`
   }
   /* margins*/
   --margin: 1.5rem;
-  .newname-label,
-  .oldname,
-  #newname {
+  .newpassword-label,
+  .oldpassword,
+  #newpassword {
     margin-bottom: var(--margin);
   }
 `;

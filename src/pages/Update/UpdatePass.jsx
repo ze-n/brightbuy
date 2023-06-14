@@ -24,12 +24,12 @@ const UpdateName = () => {
       <label htmlFor="newpassword" className="newpassword-label">
         Update Password
       </label>
-      {currentUser && (
+      {/* {currentUser && (
         <p className="oldpassword">
           <span className="bold">Old Password : </span>
-          {userPassword}
+         
         </p>
-      )}
+      )} */}
       <input
         type="password"
         name="password"

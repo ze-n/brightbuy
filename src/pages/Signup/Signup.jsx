@@ -7,7 +7,7 @@ import { useAuth } from "../../context/UserAuthContext";
 const Signup = () => {
   const navigate = useNavigate();
   // extracting error Signup and currentUser
-  const { error, SignUp, currentUser, ProfileInformation } = useAuth();
+  const { error, SignUp, currentUser } = useAuth();
   // creating state for err
   const [err, setError] = useState("");
   // creating
@@ -88,12 +88,12 @@ const Signup = () => {
     }
     // Calls SignUp method to create account
     else {
-      SignUp(email, password, FullName);
-      ProfileInformation({
-        FullName: FullName,
-        email: email,
-        password: password,
-      });
+      const userData = {
+        Fullname: user.FullName,
+        Password: user.password,
+        Email: user.email,
+      };
+      await SignUp(userData);
 
       {
         currentUser &&

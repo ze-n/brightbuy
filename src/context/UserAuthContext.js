@@ -21,8 +21,14 @@ import {
   setDoc,
   getDoc,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
 
 // created userContext
 const userContext = createContext();
@@ -87,7 +93,9 @@ const UserAuthProvider = ({ children }) => {
 
         alert("account created, You are logged in automatically");
         // sending email verification
-        sendEmailVerification(res.user)
+        // sendEmailVerification(res.user)
+        res.user
+          .sendEmailVerification()
           .then(() => {
             console.log("email verification sent");
           })
@@ -119,7 +127,7 @@ const UserAuthProvider = ({ children }) => {
     setLoading(true);
     // storing image in databse
     // creating reference of a file in database
-    const fileRef = ref(storage, currentUser.uid + ".png");
+    const fileRef = ref(storage, "profilePictures/" + currentUser.uid + ".png");
     // uploading file to that reference
     const snapshot = await uploadBytes(fileRef, file);
     // storig source of file stored so that we can use it later
@@ -233,11 +241,33 @@ const UserAuthProvider = ({ children }) => {
 
   // delete user
   const DeleteUser = async (currentUser, setLoading) => {
+    const docRef = doc(fs, "users", currentUser.uid);
+    const fileRef = ref(storage, "profilePictures/" + currentUser.uid + ".png");
+
     setLoading(true);
     // deleting user
     deleteUser(currentUser)
       .then(() => {
         alert("your account has been deleted");
+        // deleting data from firestore
+        deleteDoc(docRef)
+          .then(() => {
+            console.log("data deleted from firestore");
+          })
+          .catch((error) => {
+            console.log(
+              "error occured while deleting data from firestore ",
+              error.message
+            );
+          });
+        // deleteing profile picture
+        deleteObject(fileRef)
+          .then(() => {
+            console.log("profile pic deleted");
+          })
+          .catch((error) => {
+            console.log("error delteing profile pic ", error);
+          });
       })
       .catch((error) => {
         alert("some error occured while deleting account ");

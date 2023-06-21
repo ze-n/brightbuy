@@ -154,7 +154,7 @@ const AddProductForm = () => {
           id="product-type"
           placeholder="Write product type here"
           onChange={(e) => {
-            setProductType(e.target.value);
+            setProductType(e.target.value.trim());
           }}
         />
       </div>

@@ -3,14 +3,21 @@ import { styled } from "styled-components";
 import Stars from "../../components/Stars";
 import Currency from "../../components/Currency";
 import { Link } from "react-router-dom";
-const ProductCard = ({ id, name, reviews, rating, price, image }) => {
-  console.log("image ", image, " ", id);
+const ProductCard = ({ id, productData }) => {
+  const {
+    productName,
+    productReviews,
+    productRating,
+    productPrice,
+    productImages,
+  } = productData;
+  const handleAddToCart = () => {};
   return (
     <Wrapper>
       <Link to={"/singleproductpage/" + id}>
         {/* image section */}
         <div className="product__img">
-          <img src={image} />
+          <img src={productImages[0]} />
         </div>
         {/* details section */}
         <div className="product__details">
@@ -19,21 +26,26 @@ const ProductCard = ({ id, name, reviews, rating, price, image }) => {
             {/* ratings */}
             <div className="product__rating">
               <div className="rating-stars">
-                <Stars rating={rating} />
+                <Stars rating={productRating} />
               </div>
-              <div className="rating-reviews bold">{reviews}+ Reviews</div>
+              <div className="rating-reviews bold">
+                {productReviews}+ Reviews
+              </div>
             </div>
             {/* name */}
-            <div className="product__name bold">{name}</div>
+            <div className="product__name bold">{productName}</div>
           </div>
           {/* footer wraps price and cta together */}
           <footer className="product__footer">
             {/* price */}
             <div className="product__price">
-              <span className="bold">Price</span> <Currency price={price} />
+              <span className="bold">Price</span>{" "}
+              <Currency price={productPrice} />
             </div>
             {/* cta */}
-            <Link className="cta bold">Add to cart</Link>
+            <Link className="cta bold" onClick={handleAddToCart}>
+              Add to cart
+            </Link>
           </footer>
         </div>
       </Link>

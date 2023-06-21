@@ -14,7 +14,6 @@ const Products = () => {
         const components = products.map((product) => {
           const productId = product.id; // Get the ID of the product
           const productData = product; // Get the data of the product
-
           // Access specific fields of the product document
           const {
             productName,
@@ -23,19 +22,9 @@ const Products = () => {
             productPrice,
             productImages,
           } = productData;
-          const coverImg = productImages[0];
 
           // Return the card component with product details as props
-          return (
-            <ProductCard
-              id={productId}
-              name={productName}
-              price={productPrice}
-              reviews={productReviews}
-              rating={productRating}
-              image={coverImg}
-            />
-          );
+          return <ProductCard id={productId} productData={productData} />;
         });
 
         setCardComponents(components);

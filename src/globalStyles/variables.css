@@ -81,7 +81,7 @@ body {
   --bg-update-page: var(--clr-black);
   --clr-update-page: var(--clr-white);
   /* add product page */
-  --bg-add-product-page: var(--clr-white);
+  --bg-add-product-page: var(--clr-black);
   --clr-add-product-page: var(--clr-black);
   --bg-add-product-form: var(--clr-black);
   --clr-add-product-form: var(--clr-white);

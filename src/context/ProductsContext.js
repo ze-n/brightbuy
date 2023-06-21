@@ -53,6 +53,8 @@ const ProductsProvider = ({ children }) => {
         {
           productName,
           productType,
+          featured,
+          bestSellers,
           productDescription,
           productBrand,
           customerSupport,

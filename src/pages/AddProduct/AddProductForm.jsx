@@ -15,6 +15,8 @@ const AddProductForm = () => {
   const [productReviews, setProductReviews] = useState("");
 
   const [productImages, setProductImages] = useState(null);
+  const [featured, setFeatured] = useState("");
+  const [bestSeller, setBestSeller] = useState("");
   const [imgLength, setImgLength] = useState(null);
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -97,6 +99,8 @@ const AddProductForm = () => {
           productImages,
           productName,
           productType,
+          featured,
+          bestSeller,
           productDescription,
           productBrand,
           productPrice,
@@ -140,6 +144,30 @@ const AddProductForm = () => {
           placeholder="Write product type here"
           onChange={(e) => {
             setProductType(e.target.value);
+          }}
+        />
+      </div>
+      <div className="product-featured">
+        <label htmlFor="product-featured">Product Featured</label>
+        <input
+          type="text"
+          name="product-featured"
+          id="product-featured"
+          placeholder="Write yes or no"
+          onChange={(e) => {
+            setFeatured(e.target.value);
+          }}
+        />
+      </div>
+      <div className="product-best-sellers">
+        <label htmlFor="product-best-sellers">Product Best Sellers</label>
+        <input
+          type="text"
+          name="product-best-sellers"
+          id="product-best-sellers"
+          placeholder="Write yes or no"
+          onChange={(e) => {
+            setBestSeller(e.target.value);
           }}
         />
       </div>

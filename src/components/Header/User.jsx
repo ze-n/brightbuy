@@ -47,6 +47,11 @@ const User = () => {
             Update
           </Link>
         )}
+        {currentUser && currentUser.email == "shoyo@gmail.com" && (
+          <Link to="/addproduct" className="user-menu__link">
+            Add Products
+          </Link>
+        )}
       </div>
     </Wrapper>
   );

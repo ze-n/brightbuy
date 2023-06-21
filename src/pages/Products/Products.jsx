@@ -5,7 +5,8 @@ import { useProducts } from "../../context/ProductsContext";
 
 const Products = () => {
   const [cardComponents, setCardComponents] = useState(null);
-  const { getProductCollection } = useProducts();
+  const { getProductCollection, products } = useProducts();
+  console.log(products, " products");
   useEffect(() => {
     const productType = "CLOTHING";
     getProductCollection(productType)

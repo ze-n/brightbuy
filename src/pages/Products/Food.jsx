@@ -49,7 +49,7 @@ const Food = () => {
     <Wrapper>
       <div className="container products">
         {" "}
-        {cardComponents ? cardComponents : "No products available."}
+        {cardComponents ? cardComponents : "Loading ......"}
       </div>
     </Wrapper>
   );

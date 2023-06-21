@@ -2,38 +2,41 @@ import React from "react";
 import { styled } from "styled-components";
 import Stars from "../../components/Stars";
 import Currency from "../../components/Currency";
+import { Link } from "react-router-dom";
 const ProductCard = ({ id, name, reviews, rating, price, image }) => {
   console.log("image ", image, " ", id);
   return (
     <Wrapper>
-      {/* image section */}
-      <div className="product__img">
-        <img src={image} />
-      </div>
-      {/* details section */}
-      <div className="product__details">
-        {/* this classless div is here for layout only  wrapping rating and name together*/}
-        <div>
-          {/* ratings */}
-          <div className="product__rating">
-            <div className="rating-stars">
-              <Stars rating={rating} />
-            </div>
-            <div className="rating-reviews bold">{reviews}+ Reviews</div>
-          </div>
-          {/* name */}
-          <div className="product__name bold">{name}</div>
+      <Link to={"/singleproductpage/" + id}>
+        {/* image section */}
+        <div className="product__img">
+          <img src={image} />
         </div>
-        {/* footer wraps price and cta together */}
-        <footer className="product__footer">
-          {/* price */}
-          <div className="product__price">
-            <span className="bold">Price</span> <Currency price={price} />
+        {/* details section */}
+        <div className="product__details">
+          {/* this classless div is here for layout only  wrapping rating and name together*/}
+          <div>
+            {/* ratings */}
+            <div className="product__rating">
+              <div className="rating-stars">
+                <Stars rating={rating} />
+              </div>
+              <div className="rating-reviews bold">{reviews}+ Reviews</div>
+            </div>
+            {/* name */}
+            <div className="product__name bold">{name}</div>
           </div>
-          {/* cta */}
-          <button className="cta bold">Add to cart</button>
-        </footer>
-      </div>
+          {/* footer wraps price and cta together */}
+          <footer className="product__footer">
+            {/* price */}
+            <div className="product__price">
+              <span className="bold">Price</span> <Currency price={price} />
+            </div>
+            {/* cta */}
+            <Link className="cta bold">Add to cart</Link>
+          </footer>
+        </div>
+      </Link>
     </Wrapper>
   );
 };
@@ -44,6 +47,11 @@ const Wrapper = styled.div`
 
   .rating-stars {
     color: var(--clr-rating-stars);
+  }
+
+  .product__details,
+  .cta {
+    color: var(--clr-black);
   }
 
   /*  */

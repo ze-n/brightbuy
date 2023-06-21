@@ -16,6 +16,11 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Update from "./pages/Update/Update";
 import AddProduct from "./pages/AddProduct/AddProduct";
+import Clothing from "./pages/Products/Clothing";
+import Food from "./pages/Products/Food";
+import Accessories from "./pages/Products/Accessories";
+import Electronics from "./pages/Products/Electronics";
+import Shoes from "./pages/Products/Shoes";
 function App() {
   return (
     <div className="App">
@@ -33,6 +38,11 @@ function App() {
           <Route path="/signup" Component={Signup}></Route>
           <Route path="/update" Component={Update}></Route>
           <Route path="/addproduct" Component={AddProduct}></Route>
+          <Route path="/clothing" Component={Clothing}></Route>
+          <Route path="/food" Component={Food}></Route>
+          <Route path="/accessories" Component={Accessories}></Route>
+          <Route path="/electronics" Component={Electronics}></Route>
+          <Route path="/shoes" Component={Shoes}></Route>
           <Route path="/*" Component={Error}></Route>
         </Routes>
       </Router>

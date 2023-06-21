@@ -1,62 +1,62 @@
 import React from "react";
 import { styled } from "styled-components";
 import bicep from "../assets/icons/biccp.svg";
-
+import { Link } from "react-router-dom";
 const HorizontalScroll = () => {
   return (
     <Wrapper className="text-medium">
       <div className="slide-tracker">
-        <a href="#" className="slide">
+        <Link to="/shoes" className="slide">
           Shoes
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
-        <a href="#" className="slide">
+        <Link to="/accessories" className="slide">
           Accessories
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/food" className="slide">
           Food
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/electronics" className="slide">
           Electronics
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/clothing" className="slide">
           Clothes
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
       </div>
       {/* .copy */}
       {/* one copy is required to create seemless animation */}
 
       <div className="slide-tracker">
-        <a href="#" className="slide">
+        <Link to="/shoes" className="slide">
           Shoes
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/accessories" className="slide">
           Accessories
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/food" className="slide">
           Food
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/electronics" className="slide">
           Electronics
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
 
-        <a href="#" className="slide">
+        <Link to="/clothing" className="slide">
           Clothes
-        </a>
+        </Link>
         <img src={bicep} alt="" className="slide icon" />
       </div>
     </Wrapper>

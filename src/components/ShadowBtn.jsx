@@ -1,11 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-const ShadowBtn = ({ text }) => {
+import { Link } from "react-router-dom";
+const ShadowBtn = ({ text, to }) => {
   return (
     <Wrapper>
-      <a href="#" className="link text-medium">
+      <Link to={to} className="link text-medium">
         {text}
-      </a>
+      </Link>
       <div className="shadow"></div>
     </Wrapper>
   );

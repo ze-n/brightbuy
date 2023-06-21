@@ -40,7 +40,7 @@ const ClothingLine = () => {
       <div className="container flex-columns">
         <div className="text-container flex-column">
           <h2 className="title">Unlock Your Style Now Be Free</h2>
-          <ShadowBtn text="Checkout Our Collection" />
+          <ShadowBtn text="Checkout Our Collection" to="/clothing" />
         </div>
         <div className="image-container flex-column">
           <img src={clothingmodel} alt="" className="clothing-model" />

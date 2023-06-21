@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../context/ProductsContext";
 
-const Products = () => {
+const Clothing = () => {
   const [cardComponents, setCardComponents] = useState(null);
   const { getProductCollection } = useProducts();
   useEffect(() => {
@@ -83,4 +83,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default Products;
+export default Clothing;

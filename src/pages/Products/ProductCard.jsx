@@ -3,11 +3,12 @@ import { styled } from "styled-components";
 import Stars from "../../components/Stars";
 import Currency from "../../components/Currency";
 const ProductCard = ({ id, name, reviews, rating, price, image }) => {
+  console.log("image ", image, " ", id);
   return (
     <Wrapper>
       {/* image section */}
       <div className="product__img">
-        <img src={image.url} alt={image.filename} />
+        <img src={image} />
       </div>
       {/* details section */}
       <div className="product__details">

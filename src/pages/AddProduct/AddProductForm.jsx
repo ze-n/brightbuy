@@ -68,11 +68,17 @@ const AddProductForm = () => {
         } else {
           // console.log("this is bad ");
           setProductImages(null);
+          setInterval(() => {
+            setImgError("");
+          }, 5000);
           setImgError(
             "Please select a valid image file type(jpg or png or gif)"
           );
         }
       } else {
+        setInterval(() => {
+          setImgError("");
+        }, 5000);
         setImgError("Please select your file");
       }
     }
@@ -89,8 +95,13 @@ const AddProductForm = () => {
       !productDescription ||
       !productPrice ||
       !warranty ||
-      !customerSupport
+      !customerSupport ||
+      !featured ||
+      !bestSeller
     ) {
+      setInterval(() => {
+        setErrorMsg("");
+      }, 5000);
       setErrorMsg("Please fill all the fields");
     } else {
       if (productImages.length === imgLength) {

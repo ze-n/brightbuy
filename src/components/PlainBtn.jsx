@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-
-const PlainBtn = ({ text }) => {
+const PlainBtn = ({ text, to }) => {
   return (
     <Wrapper>
-      <p className="text">{text}</p>
+      <Link className="text" to={to}>
+        {text}
+      </Link>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.a`
+const Wrapper = styled.div`
   /*  */
   /* colors */
   /*  */

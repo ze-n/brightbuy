@@ -11,7 +11,7 @@ const FooterAbout = () => {
         one place from clothes to electronics to even food.{" "}
       </p>
       <div className="cta">
-        <PlainBtn text="Shop now" />
+        <PlainBtn text="Shop now" to="/products" />
       </div>
     </Wrapper>
   );

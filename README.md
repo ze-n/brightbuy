@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## `deployoment link`
 https://ze-n.github.io/brightbuy/
 
+## `design document`
+https://www.figma.com/file/zKt1ndbMKef10R8G8k2ek5/ecommerceProject?type=design&node-id=0%3A1&mode=design&t=SoAOYpv4BpjPBoO4-1
+
 ## Available Scripts
 
 In the project directory, you can run:

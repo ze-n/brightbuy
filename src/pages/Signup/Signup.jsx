@@ -80,7 +80,7 @@ const Signup = () => {
       return setError("Password does not match");
     }
     // if password length is too short
-    else if (!password.length >= 6 || !confirmPassword.length >= 6) {
+    else if (password.length < 6) {
       setInterval(() => {
         setError("");
       }, 5000);
@@ -219,10 +219,16 @@ const Wrapper = styled.section`
     text-decoration: underline wavy 2px;
     text-underline-offset: 0.4rem;
   }
+  .error {
+    line-height: 1.9rem;
+  }
   /*  */
   /* layout */
   /*  */
 
+  .form {
+    max-width: 320px;
+  }
   /* making form appear in center  */
   .container {
     display: flex;

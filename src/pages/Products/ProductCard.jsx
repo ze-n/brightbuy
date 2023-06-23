@@ -159,6 +159,19 @@ const Wrapper = styled.div`
   .product__rating {
     margin-bottom: 0.5rem;
   }
+  /*  */
+  /* animations and transitions */
+  /*  */
+
+  .cta {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+  }
+  .cta:hover,
+  .cta:focus {
+    transform: scale(0.9);
+  }
+
   @media screen and (max-width: 360px) {
     /* reducing font-size to adjust card in smaller screens */
     font-size: 0.9rem;

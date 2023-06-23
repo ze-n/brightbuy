@@ -15,7 +15,7 @@ const Hero = ({ title, subTitle, btnText, heroImg }) => {
             </div>
             <h1 className="title">{title}</h1>
             <h2 className="subtitle">{subTitle}</h2>
-            <ShadowBtn text={btnText} />
+            <ShadowBtn text={btnText} to="/bestsellers" />
           </div>
           <img src={blob} alt="" className="blob" />
         </div>

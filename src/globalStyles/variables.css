@@ -200,6 +200,9 @@ body {
     --lh-section-heading-lg: 3.6rem;
     /* aside heading */
     --fs-aside-heading: 1.3rem;
+    /* text medium */
+    --fs-text-medium: 1rem;
+    --lh-text-medium: 1.7rem;
 
     /* label */
     --fs-label: 0.8rem;

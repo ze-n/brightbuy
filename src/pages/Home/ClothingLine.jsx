@@ -104,8 +104,8 @@ const Wrapper = styled.section`
     /* increasign padding top on mobile devices */
     --ptop: 4rem;
     /* reducting font size of title on smaller screens */
-    --fs-title: 55px;
-    --lh-title: 70px;
+    --fs-title: 38px;
+    --lh-title: 58px;
   }
 `;
 

@@ -129,6 +129,38 @@ const ProductsProvider = ({ children }) => {
       return [];
     }
   };
+  useEffect(() => {
+    const getProductCollections = async () => {
+      try {
+        // Get all collections whose names start with "products-"
+        const collectionRef = query(
+          collection(fs),
+          where("name", ">=", "products-"),
+          where("name", "<", "products-" + "z")
+        );
+        const querySnapshot = await getDocs(collectionRef);
+
+        const productsData = [];
+        querySnapshot.forEach((collectionDoc) => {
+          // Get documents within each collection
+          const productDocs = collection(collection(fs, collectionDoc.id));
+          productDocs.forEach((productDoc) => {
+            productsData.push({
+              id: productDoc.id,
+              ...productDoc.data(),
+            });
+          });
+        });
+        console.log(productsData);
+        setProducts(productsData);
+        return products;
+      } catch (error) {
+        console.log("Error retrieving product collection:", error.message);
+        return [];
+      }
+    };
+    getProductCollections();
+  }, []);
 
   const value = {
     addProduct,

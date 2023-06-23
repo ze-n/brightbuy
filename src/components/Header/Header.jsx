@@ -37,7 +37,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav__items logo hide-on-mobile">
-            <Link to="/" className="nav__link">
+            <Link to="/brightbuy" className="nav__link">
               <Logo />
             </Link>
           </li>
@@ -73,7 +73,7 @@ const Header = () => {
       </nav>
 
       <nav className="mobile-nav hide-on-desktop">
-        <Link to="/" className="header-logo ">
+        <Link to="/brightbuy" className="header-logo ">
           <Logo />
         </Link>
         <a href="#" className="mobile-nav__link mobile-userDp-btn">

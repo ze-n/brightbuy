@@ -52,7 +52,7 @@ const Login = () => {
     try {
       await UserLogin(email, password);
       // navigate to home page if everything is good
-      navigate("/");
+      navigate("/brightbuy");
     } catch (error) {
       // setting respective error messages
       if (error.code == "auth/user-not-found") {

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/brightbuy/static/css/main.ba0cc2b6.css",
-    "main.js": "/brightbuy/static/js/main.b37926d4.js",
+    "main.css": "/brightbuy/static/css/main.0fb0bb9d.css",
+    "main.js": "/brightbuy/static/js/main.a00dd15e.js",
     "static/media/hero-img.png": "/brightbuy/static/media/hero-img.c59e0b2ff41f906d70f9.png",
     "static/media/clothingModel.png": "/brightbuy/static/media/clothingModel.71017f7f901d430b7f22.png",
     "static/media/product1.png": "/brightbuy/static/media/product1.5baf29fd9574445b576d.png",
@@ -26,11 +26,11 @@
     "static/media/blob.svg": "/brightbuy/static/media/blob.96be742dd13259aff443be91c6782a6d.svg",
     "index.html": "/brightbuy/index.html",
     "static/media/arrow.svg": "/brightbuy/static/media/arrow.6fb4a83964a059e0a2c4f53cc89a8128.svg",
-    "main.ba0cc2b6.css.map": "/brightbuy/static/css/main.ba0cc2b6.css.map",
-    "main.b37926d4.js.map": "/brightbuy/static/js/main.b37926d4.js.map"
+    "main.0fb0bb9d.css.map": "/brightbuy/static/css/main.0fb0bb9d.css.map",
+    "main.a00dd15e.js.map": "/brightbuy/static/js/main.a00dd15e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba0cc2b6.css",
-    "static/js/main.b37926d4.js"
+    "static/css/main.0fb0bb9d.css",
+    "static/js/main.a00dd15e.js"
   ]
 }

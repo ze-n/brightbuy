@@ -30,7 +30,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" Component={Home}></Route>
+          <Route path="/brightbuy" Component={Home}></Route>
           <Route path="/about" Component={About}></Route>
           <Route path="/contact" Component={Contact}></Route>
           <Route path="/cart" Component={Cart}></Route>

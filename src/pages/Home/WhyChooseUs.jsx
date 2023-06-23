@@ -78,7 +78,8 @@ const WhyChooseUs = () => {
               <span className="bold">within 2 working days.</span>
             </Feature>
           </div>
-          <ShadowBtn text="Shop Best Sellers" />
+
+          <ShadowBtn text="Shop Best Sellers" to="/bestsellers" />
         </div>
       </CurvedSection>
     </Wrapper>

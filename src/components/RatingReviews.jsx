@@ -1,17 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
 import { AiFillStar } from "react-icons/ai";
-const RatingReviews = () => {
+import Stars from "./Stars";
+const RatingReviews = ({ productRating, productReviews }) => {
   return (
     <Wrapper>
       <div className="stars">
-        <AiFillStar className="icon text-medium" />
-        <AiFillStar className="icon text-medium" />
-        <AiFillStar className="icon text-medium" />
-        <AiFillStar className="icon text-medium" />
-        <AiFillStar className="icon text-medium" />
+        <Stars rating={productRating} />
       </div>
-      <div className="reviews text-regular">50,000+ Reviews</div>
+      <div className="reviews text-regular">{productReviews}+ Reviews</div>
     </Wrapper>
   );
 };

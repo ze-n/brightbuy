@@ -7,6 +7,8 @@ const ProductReviewCard = ({
   userReview,
   productImage,
   nameColor,
+  productRating,
+  productReviews,
 }) => {
   return (
     <Wrapper>
@@ -20,7 +22,10 @@ const ProductReviewCard = ({
         </div>
         <div className="flex-column image-column">
           <img src={productImage} alt="" className="product__image" />
-          <RatingReviews />
+          <RatingReviews
+            productRating={productRating}
+            productReviews={productReviews}
+          />
         </div>
       </div>
     </Wrapper>

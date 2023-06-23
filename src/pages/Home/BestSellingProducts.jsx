@@ -18,16 +18,22 @@ const BestSellingProducts = () => {
             userReview="I purchased Cosmic Byte GK-18, It feels so good to type on this thing"
             productImage={img1}
             nameColor="var(--clr-home-best-selling-review-name)"
+            productRating="4.6"
+            productReviews="25435"
           />
           <ProductReviewCard
             userName="Eran Batoski"
             userReview="I have been wearing sneakers all my life, these Tracy Sneakers were something else."
             productImage={img2}
+            productRating="4.3"
+            productReviews="24545"
           />
           <ProductReviewCard
-            userName="Nigga White"
-            userReview="This watch is such a productivity steroid."
+            userName="Harish Sharma"
+            userReview="This watch is better than all previous ones I had"
             productImage={img3}
+            productRating="5"
+            productReviews="35435"
           />
         </div>
       </CurvedSection>

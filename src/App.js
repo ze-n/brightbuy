@@ -53,8 +53,8 @@ function App() {
 
           <Route path="/*" Component={Error}></Route>
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

@@ -1,33 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import keyboard from "../../assets/product1.png";
-import shoes from "../../assets/product2.png";
-import hoody from "../../assets/product3.png";
-import { ImCross } from "react-icons/im";
-const ProductPriceTable = () => {
-  const cartList = [
-    {
-      id: 1,
-      img: keyboard,
-      name: "GK 16 cosmic byte",
-      price: 200,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      img: shoes,
-      name: "Canvas Black Shoes",
-      price: 300,
-      quantity: 3,
-    },
-    {
-      id: 3,
-      img: hoody,
-      name: "Black Hoody Over-Sized ",
-      price: 400,
-      quantity: 2,
-    },
-  ];
+
+import SingleCartProduct from "./SingleCartProduct";
+import MobileSingleCartProduct from "./MobileSingleCartProduct";
+import { useCart } from "../../context/CartContext";
+const ProductPriceTable = ({ liveCartProducts }) => {
+  console.log(liveCartProducts, "ok i am deep here");
   return (
     <Wrapper>
       <table className="table hide-on-mobile">
@@ -42,57 +20,67 @@ const ProductPriceTable = () => {
           </tr>
         </thead>
         <tbody>
-          {cartList.map(({ id, img, name, price, quantity }) => {
-            return (
-              <tr id={id} className="text-medium">
-                <td>
-                  <ImCross className="cross-icon" />
-                </td>
-                <td className="product__img-container">
-                  <img src={img} alt="" className="product__img" />
-                </td>
-                <td className="product__name">{name}</td>
-                <td className="product__price">${price}</td>
-                <td className="product__quantity">
-                  <span className="quantity-box">{quantity}</span>
-                </td>
-                <td className="product__subtotal">${price * quantity}</td>
-              </tr>
-            );
-          })}
+          {liveCartProducts.map(
+            ({
+              id,
+              productImages,
+              productName,
+              productPrice,
+              qty,
+              totalProductPrice,
+            }) => {
+              return (
+                <SingleCartProduct
+                  id={id}
+                  productImages={productImages}
+                  productName={productName}
+                  productPrice={productPrice}
+                  qty={qty}
+                  totalProductPrice={totalProductPrice}
+                />
+              );
+            }
+          )}
         </tbody>
       </table>
+      {/* for mobile devices */}
       <table className="mobile-table hide-on-desktop">
-        {cartList.map(({ id, img, name, price, quantity }) => {
-          return (
-            <tr id={id} className="row">
-              {/* column 1 */}
-              <td>
-                <img src={img} alt="" className="product__img col" />
-              </td>
-              {/* column 2 */}
-              <td className="col">
-                <p className="product__name ">{name}</p>
-                <p className="product__quantity ">
-                  quantity <span className="bold">{quantity} </span>
-                </p>
-              </td>
-              {/* column 3 */}
-              <td className="col">
-                <p className="product__price text-regular">${price}</p>
-                <p className="product__subtotal text-small">
-                  <span className="bold">subtotal</span> ${quantity * price}
-                </p>
-              </td>
-            </tr>
-          );
-        })}
+        {liveCartProducts.map(
+          ({
+            id,
+            productImages,
+            productName,
+            productPrice,
+            qty,
+            totalProductPrice,
+          }) => {
+            return (
+              <MobileSingleCartProduct
+                id={id}
+                productImages={productImages}
+                productName={productName}
+                productPrice={productPrice}
+                qty={qty}
+                totalProductPrice={totalProductPrice}
+              />
+            );
+          }
+        )}
       </table>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  /*  */
+  /* colors */
+  /*  */
+  .inc-qty,
+  .dec-qty {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+  }
+
   /*  */
   /* typography */
   /*  */
@@ -120,6 +108,7 @@ const Wrapper = styled.div`
   th,
   td {
     padding: 1rem;
+    text-align: left;
   }
 
   /* setting up width */
@@ -147,10 +136,12 @@ const Wrapper = styled.div`
   .cross-icon {
     width: var(--cross-icon-size);
     height: var(--cross-icon-size);
+    cursor: pointer;
   }
   .quantity-box {
     /* making it inline-block, so that width works */
-    display: inline-block;
+    display: flex;
+    align-items: center;
     /* giving it some width */
     width: 100%;
     /* giving it a border */
@@ -159,7 +150,19 @@ const Wrapper = styled.div`
     padding-inline: 1rem;
     padding-block: 0.5rem;
   }
-
+  .quantity {
+    padding-inline: 0.3rem;
+  }
+  --quantity-btn-size: 1.3rem;
+  .inc-qty,
+  .dec-qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--quantity-btn-size);
+    width: var(--quantity-btn-size);
+    cursor: pointer;
+  }
   @media screen and (max-width: 900px) {
     /* reseting image sizes because of less space available */
     --product-img-height: 4rem;
@@ -171,7 +174,12 @@ const Wrapper = styled.div`
     /*  */
     /* code for mobile-table */
     /*  */
-
+    /*  */
+    /* colors */
+    /*  */
+    .delete-product p {
+      color: var(--clr-error);
+    }
     /*  */
     /* typography  */
     /*  */
@@ -193,6 +201,9 @@ const Wrapper = styled.div`
     .product__quantity {
       font-weight: 400;
     }
+    .delete-product p {
+      font-weight: 600;
+    }
     /*  */
     /* layout */
     /*  */
@@ -212,8 +223,32 @@ const Wrapper = styled.div`
     td,
     th {
       padding-inline: 0.5rem;
+      width: 100%;
+    }
+    /* making column take atleast some consistent layout */
+    td {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .mobile-quantity-box {
+      display: flex;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+    .delete-product {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      cursor: pointer;
     }
 
+    .cross-icon {
+      height: 0.6rem;
+    }
     /* giving max-width to product name because it looks bad otherwise */
     /* and alignment of this column with other rows gets bad */
     .product__name {

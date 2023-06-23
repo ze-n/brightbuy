@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { fs, storage } from "../Config/Config";
 import {
   collection,
@@ -7,6 +7,7 @@ import {
   where,
   addDoc,
   updateDoc,
+  onSnapshot,
 } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 const productsContext = createContext();
@@ -15,6 +16,36 @@ export const useProducts = () => {
 };
 
 const ProductsProvider = ({ children }) => {
+  const [products, setProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const productCollections = [
+    "products-ACCESSORIES",
+    "products-CLOTHING",
+    "products-FOOD",
+    "products-SHOES",
+    "products-ELECTRONICS",
+  ];
+  const getProductCollections = async () => {
+    const products = [];
+    productCollections.map((coll) => {
+      const CollectionRef = collection(fs, coll);
+      // console.log("CollectionRef" , coll)
+      onSnapshot(CollectionRef, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          products.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+          console.log("this is something", products);
+        });
+        console.log("i am here");
+        setAllProducts(products);
+        return products;
+      });
+      console.log("this is it ", collection);
+    });
+  };
+
   // this method is used to store product details in database
   const addProduct = async (
     productImages,
@@ -98,7 +129,14 @@ const ProductsProvider = ({ children }) => {
       return [];
     }
   };
-  const value = { addProduct, getProductCollection };
+
+  const value = {
+    addProduct,
+    getProductCollection,
+    products,
+    getProductCollections,
+    allProducts,
+  };
   return (
     <productsContext.Provider value={value}>
       {children}

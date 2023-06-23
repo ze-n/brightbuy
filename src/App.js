@@ -21,6 +21,8 @@ import Food from "./pages/Products/Food";
 import Accessories from "./pages/Products/Accessories";
 import Electronics from "./pages/Products/Electronics";
 import Shoes from "./pages/Products/Shoes";
+import Featured from "./pages/Products/Featured";
+import BestSellers from "./pages/Products/BestSellers";
 function App() {
   return (
     <div className="App">
@@ -32,7 +34,10 @@ function App() {
           <Route path="/about" Component={About}></Route>
           <Route path="/contact" Component={Contact}></Route>
           <Route path="/cart" Component={Cart}></Route>
-          <Route path="/singleproduct" Component={SingleProductPage}></Route>
+          <Route
+            path="/singleproductpage/:id"
+            Component={SingleProductPage}
+          ></Route>
           <Route path="/products" Component={Products}></Route>
           <Route path="/login" Component={Login}></Route>
           <Route path="/signup" Component={Signup}></Route>
@@ -43,6 +48,9 @@ function App() {
           <Route path="/accessories" Component={Accessories}></Route>
           <Route path="/electronics" Component={Electronics}></Route>
           <Route path="/shoes" Component={Shoes}></Route>
+          <Route path="/featured" Component={Featured}></Route>
+          <Route path="/bestsellers" Component={BestSellers}></Route>
+
           <Route path="/*" Component={Error}></Route>
         </Routes>
       </Router>

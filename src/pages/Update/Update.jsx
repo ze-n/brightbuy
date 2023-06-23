@@ -16,7 +16,7 @@ const Update = () => {
         <UpdateEmail />
         <UpdatePass />
         <DeleteAccount />
-        {verifyEmail && (
+        {/* {verifyEmail && (
           <p
             className="email-verification"
             style={{ "--bg-email-verification": "var(--clr-green-450)" }}
@@ -29,7 +29,7 @@ const Update = () => {
             Email is sent verify your account{" "}
           </p>
         )}
-        {console.log("email verified ", verifyEmail)}
+        {console.log("email verified ", verifyEmail)} */}
       </div>
     </Wrapper>
   );

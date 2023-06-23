@@ -1,9 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
+import Currency from "./Currency";
 const NotificationBar = () => {
   return (
     <Wrapper>
-      <p className="text text-small">Free Shipping over $999</p>
+      <p className="text text-small">
+        Free Shipping over <Currency price="2000" />
+      </p>
     </Wrapper>
   );
 };
@@ -31,6 +34,10 @@ const Wrapper = styled.div`
   align-items: center;
   .text {
     text-align: center;
+  }
+  p {
+    display: flex;
+    gap: 0.3rem;
   }
 `;
 export default NotificationBar;

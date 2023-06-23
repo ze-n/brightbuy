@@ -3,7 +3,9 @@ import { styled } from "styled-components";
 import Stars from "../../components/Stars";
 import Currency from "../../components/Currency";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 const ProductCard = ({ id, productData }) => {
+  const { addToCart } = useCart();
   const {
     productName,
     productReviews,
@@ -11,44 +13,44 @@ const ProductCard = ({ id, productData }) => {
     productPrice,
     productImages,
   } = productData;
-  const handleAddToCart = () => {};
+  const handleAddToCart = () => {
+    addToCart(id, productData);
+  };
   return (
     <Wrapper>
-      <Link to={"/singleproductpage/" + id}>
-        {/* image section */}
-        <div className="product__img">
-          <img src={productImages[0]} />
-        </div>
-        {/* details section */}
-        <div className="product__details">
-          {/* this classless div is here for layout only  wrapping rating and name together*/}
-          <div>
-            {/* ratings */}
-            <div className="product__rating">
-              <div className="rating-stars">
-                <Stars rating={productRating} />
-              </div>
-              <div className="rating-reviews bold">
-                {productReviews}+ Reviews
-              </div>
+      {/* <Link to={"/singleproductpage/" + id}> */}
+      {/* image section */}
+      <div className="product__img">
+        <img src={productImages[0]} />
+      </div>
+      {/* details section */}
+      <div className="product__details">
+        {/* this classless div is here for layout only  wrapping rating and name together*/}
+        <div>
+          {/* ratings */}
+          <div className="product__rating">
+            <div className="rating-stars">
+              <Stars rating={productRating} />
             </div>
-            {/* name */}
-            <div className="product__name bold">{productName}</div>
+            <div className="rating-reviews bold">{productReviews}+ Reviews</div>
           </div>
-          {/* footer wraps price and cta together */}
-          <footer className="product__footer">
-            {/* price */}
-            <div className="product__price">
-              <span className="bold">Price</span>{" "}
-              <Currency price={productPrice} />
-            </div>
-            {/* cta */}
-            <Link className="cta bold" onClick={handleAddToCart}>
-              Add to cart
-            </Link>
-          </footer>
+          {/* name */}
+          <div className="product__name bold">{productName}</div>
         </div>
-      </Link>
+        {/* footer wraps price and cta together */}
+        <footer className="product__footer">
+          {/* price */}
+          <div className="product__price">
+            <span className="bold">Price</span>{" "}
+            <Currency price={productPrice} />
+          </div>
+          {/* cta */}
+          <Link className="cta bold" onClick={handleAddToCart}>
+            Add to cart
+          </Link>
+        </footer>
+      </div>
+      {/* </Link> */}
     </Wrapper>
   );
 };

@@ -42,6 +42,7 @@ const UserAuthProvider = ({ children }) => {
   const [verifyEmail, setVerifyEmail] = useState();
   // stores current user object
   const [currentUser, setCurrentUser] = useState();
+  const [currentUserUid, setCurrentUserUid] = useState();
   // this fuction listens for changes in user authentication state, like when user logs in or logs out
   // and calls the callback function
 
@@ -51,7 +52,7 @@ const UserAuthProvider = ({ children }) => {
     if (user) {
       // set currentUser state to user object
       setCurrentUser(user);
-
+      setCurrentUserUid(user.uid);
       // set verifyEmail state to the emailVerified property of user object
       setVerifyEmail(user.emailVerified);
       console.log(verifyEmail + " in mail");
@@ -278,6 +279,7 @@ const UserAuthProvider = ({ children }) => {
   const value = {
     SignUp,
     currentUser,
+    currentUserUid,
     UserLogin,
     UserLogout,
     verifyEmail,

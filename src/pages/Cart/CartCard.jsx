@@ -1,11 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import ProductPriceTable from "./ProductPriceTable";
 import BlackButton from "../../components/BlackButton";
+import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/UserAuthContext";
+import Currency from "../../components/Currency";
+import StripeCheckout from "react-stripe-checkout";
 const CartCard = () => {
+  const {
+    getCartProducts,
+    cartProducts,
+    liveCartProducts,
+    getLiveCartProducts,
+  } = useCart();
+  const { currentUser, currentUserUid } = useAuth();
+
+  useEffect(() => {
+    if (currentUser) {
+      const fetchLiveCartProducts = async () => {
+        try {
+          await getLiveCartProducts();
+          console.log("Products loaded");
+        } catch (error) {
+          console.log("Failed to load products", error.message);
+        }
+      };
+      fetchLiveCartProducts();
+    }
+  }, [currentUser]);
+  if (liveCartProducts) {
+    console.log(liveCartProducts, "live");
+    let SubTotals = liveCartProducts.map((product) => {
+      return product.totalProductPrice;
+    });
+    // totalprice reducer
+    var totalPriceReducer = (accum, curEle) => accum + curEle;
+
+    var subTotal = SubTotals.reduce(totalPriceReducer, 0);
+  }
+
+  console.log(cartProducts, "cart products");
+
+  const handleToken = () => {};
+
   return (
     <Wrapper>
-      <ProductPriceTable className="product-price-table" />
+      {liveCartProducts && currentUser ? (
+        <ProductPriceTable
+          className="product-price-table"
+          liveCartProducts={liveCartProducts}
+        />
+      ) : (
+        <p>loading........</p>
+      )}
       {/* cart toatls container */}
       <div className="cart-totals-container">
         {/* cart totals heading */}
@@ -13,18 +60,33 @@ const CartCard = () => {
         {/* art total */}
         <div className="cart-total border-bottom subtotal-container flex-between">
           <span className="heading">Subtotal</span>
-          <span>$7000</span>
+          <span>
+            <Currency price={subTotal} />
+          </span>
         </div>
         {/* cart total */}
         <div className="cart-total total-container flex-between">
           <span className="heading">Total</span>
-          <span>$7010</span>
+          <span>
+            <Currency price={subTotal > 1999 ? subTotal : subTotal + 299} />
+          </span>
         </div>
       </div>
+
       {/* checkout button */}
       <div className="checkout-btn">
         <BlackButton scale=".95" animDuration=".3s">
-          Proceed to checkout
+          <StripeCheckout
+            stripeKey="pk_test_51NLxIHSBNLGoeUKUVRyInYQaPoc6fOJ85Z4wXt7ieHrUNLyLdLJKtKqFotSgVQtJyYrs2sfVtcZlAUimVs9jnFh100zuuSSqP5"
+            billingAddress
+            shippingAddress
+            token={handleToken}
+            name="all products"
+            amount={subTotal > 1999 ? subTotal * 100 : (subTotal + 299) * 100}
+            style={{
+              backgroundColor: "black",
+            }}
+          />
         </BlackButton>
       </div>
     </Wrapper>

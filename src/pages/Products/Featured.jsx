@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useProducts } from "../../context/ProductsContext";
 import { styled } from "styled-components";
 import ProductCard from "./ProductCard";
-import { useProducts } from "../../context/ProductsContext";
-
-const Products = () => {
-  const [cardComponents, setCardComponents] = useState(null);
-  const { getProductCollection, products, getProductCollections, allProducts } =
-    useProducts();
-
+const Featured = () => {
+  const { getProductCollections, allProducts } = useProducts();
   useEffect(() => {
     const fetchLiveAllProducts = async () => {
       try {
@@ -20,32 +16,36 @@ const Products = () => {
     fetchLiveAllProducts();
   }, []);
   if (allProducts) {
-    console.log(allProducts);
+    console.log(allProducts, " featured");
   }
   return (
     <Wrapper>
       {allProducts ? (
         <div className="container products">
-          {allProducts.map(
-            ({
-              id,
-              productName,
-              productReviews,
-              productRating,
-              productPrice,
-              productImages,
-            }) => {
-              let productData = {
+          {allProducts
+            .filter(({ featured }) => featured == "yes")
+            .map(
+              ({
                 id,
                 productName,
                 productReviews,
                 productRating,
                 productPrice,
                 productImages,
-              };
-              return <ProductCard key={id} id={id} productData={productData} />;
-            }
-          )}
+              }) => {
+                let productData = {
+                  id,
+                  productName,
+                  productReviews,
+                  productRating,
+                  productPrice,
+                  productImages,
+                };
+                return (
+                  <ProductCard key={id} id={id} productData={productData} />
+                );
+              }
+            )}
         </div>
       ) : (
         <div>Loading...</div>
@@ -81,5 +81,4 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 `;
-
-export default Products;
+export default Featured;

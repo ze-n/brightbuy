@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 import { CgShoppingCart } from "react-icons/cg";
+import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/UserAuthContext";
 const CartIconButton = () => {
+  const { liveCartProducts, getLiveCartProducts } = useCart();
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    if (currentUser) {
+      const fetchLiveCartProducts = async () => {
+        try {
+          await getLiveCartProducts();
+          console.log("Products loaded");
+        } catch (error) {
+          console.log("Failed to load products", error.message);
+        }
+      };
+      fetchLiveCartProducts();
+    }
+  }, [currentUser]);
+  if (liveCartProducts) {
+    console.log(liveCartProducts.length);
+  }
   return (
     <Wrapper>
       <CgShoppingCart className="cart-icon" />
-      <div className="counter">2</div>
+      {liveCartProducts && (
+        <div className="counter">{liveCartProducts.length}</div>
+      )}
     </Wrapper>
   );
 };

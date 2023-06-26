@@ -40,7 +40,7 @@ const Details = ({ product }) => {
       <div className="product__price">
         {/* actual price */}
         <s className="actual-price">
-          <Currency price="300" />
+          <Currency price={productPrice} />
         </s>
         {/* sale price */}
         <span className="sale-price">

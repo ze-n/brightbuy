@@ -95,8 +95,7 @@ const UserAuthProvider = ({ children }) => {
         alert("account created, You are logged in automatically");
         // sending email verification
         // sendEmailVerification(res.user)
-        res.user
-          .sendEmailVerification()
+        sendEmailVerification(res.user)
           .then(() => {
             console.log("email verification sent");
           })
@@ -112,7 +111,7 @@ const UserAuthProvider = ({ children }) => {
       });
   };
 
-  // Login Functinallity
+  // Login Functinallity'brightBuyReal(copy)'
   // This method is used to login
   const UserLogin = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);

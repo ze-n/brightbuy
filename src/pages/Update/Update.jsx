@@ -6,6 +6,8 @@ import UpdateEmail from "./UpdateEmail";
 import UpdatePass from "./UpdatePass";
 import DeleteAccount from "./DeleteAccount";
 import { useAuth } from "../../context/UserAuthContext";
+import { EmailAuthCredential } from "firebase/auth";
+import EmailVerification from "./EmailVerification";
 const Update = () => {
   const { verifyEmail } = useAuth();
   return (
@@ -15,21 +17,8 @@ const Update = () => {
         <UpdateName />
         <UpdateEmail />
         <UpdatePass />
+        <EmailVerification />
         <DeleteAccount />
-        {/* {verifyEmail && (
-          <p
-            className="email-verification"
-            style={{ "--bg-email-verification": "var(--clr-green-450)" }}
-          >
-            Email is verified
-          </p>
-        )}
-        {!verifyEmail && (
-          <p className="email-verification">
-            Email is sent verify your account{" "}
-          </p>
-        )}
-        {console.log("email verified ", verifyEmail)} */}
       </div>
     </Wrapper>
   );

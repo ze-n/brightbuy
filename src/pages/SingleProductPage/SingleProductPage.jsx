@@ -1,24 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import BreadCrumbs from "./BreadCrumbs";
-import API from "./Temp";
 import Images from "./Images";
 import Details from "./Details";
+import { useParams } from "react-router-dom";
+import { useProducts } from "../../context/ProductsContext";
 
 const SingleProductPage = () => {
-  const { id, name, price, rating, reviews, colors } = API;
+  const [product, setProduct] = useState();
+  const [isProductFetched, setIsProductFetched] = useState(false);
+  const { id } = useParams();
+  const { allProducts, getProductCollections } = useProducts();
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      await getProductCollections();
+    };
+
+    fetchProduct();
+  }, [getProductCollections]);
+
+  useEffect(() => {
+    if (allProducts) {
+      const foundProduct = allProducts.find((product) => product.id === id);
+      setProduct(foundProduct);
+    }
+  }, [allProducts, id]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  const {
+    productName,
+    productType,
+    featured,
+    bestSeller,
+    productDescription,
+    productBrand,
+    productPrice,
+    productRating,
+    productReviews,
+    customerSupport,
+    warranty,
+    productImages,
+    colors,
+  } = product || {}; // Provide default empty object
+
   return (
     <Wrapper>
-      <div className="container ">
-        <div className="breadcrumbs">
-          <BreadCrumbs />
-        </div>
+      <div className="container">
+        {/* <div className="breadcrumbs">
+          {allProducts && <BreadCrumbs name={productName} />}
+        </div> */}
         <div className="product__images-details-container flex-columns">
           <div className="product__images-container flex-column">
-            <Images />
+            {allProducts && <Images images={productImages} />}
           </div>
           <div className="product__details-container flex-column">
-            <Details />
+            {allProducts && <Details product={product} />}
           </div>
         </div>
       </div>

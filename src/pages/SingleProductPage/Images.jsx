@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import API from "./Temp";
 
-const ImagesContainer = () => {
-  const { images } = API;
-  const [mainImage, setMainImage] = useState(images[0]);
+const ImagesContainer = ({ images }) => {
+  if (images) {
+    var [mainImage, setMainImage] = useState(images[0]);
+    // console.log(images, " these are the images");
+  }
 
   return (
     <Wrapper className="product__images-container">
       {/* main image container */}
-      <div className="main-image-container">
-        <img src={mainImage.url} alt={mainImage.filename} />
-      </div>
+      {images && (
+        <div className="main-image-container">
+          <img src={mainImage} alt="" />
+        </div>
+      )}
       {/* all small imgages container */}
       <div className="small-images-container flex-columns">
-        {images.map((curEle, index) => {
-          return (
-            // small image container
-            <figure className="small-image-container flex-column" key={index}>
-              <img
-                src={curEle.url}
-                alt={curEle.url}
-                onClick={() => {
-                  setMainImage(curEle);
-                }}
-              />
-            </figure>
-          );
-        })}
+        {images &&
+          images.map((curEle, index) => {
+            return (
+              // small image container
+              <figure className="small-image-container flex-column" key={index}>
+                <img
+                  src={curEle}
+                  onClick={() => {
+                    setMainImage(curEle);
+                  }}
+                />
+              </figure>
+            );
+          })}
       </div>
     </Wrapper>
   );

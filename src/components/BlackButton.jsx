@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-const BlackButton = ({ children, scale, animDuration }) => {
+const BlackButton = ({ children, scale, animDuration, to }) => {
   return (
     <Wrapper style={{ "--scale": scale, "--anim-duration": animDuration }}>
-      {children}
+      <Link to={to}> {children}</Link>
     </Wrapper>
   );
 };

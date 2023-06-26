@@ -36,13 +36,13 @@ const ProductsProvider = ({ children }) => {
             id: doc.id,
             ...doc.data(),
           });
-          console.log("this is something", products);
+          // console.log("this is something", products);
         });
-        console.log("i am here");
+        // console.log("i am here");
         setAllProducts(products);
         return products;
       });
-      console.log("this is it ", collection);
+      // console.log("this is it ", collection);
     });
   };
   useEffect(() => {

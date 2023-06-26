@@ -5,23 +5,36 @@ import Currency from "../../components/Currency";
 import Stars from "../../components/Stars";
 import Colors from "./Colors";
 import BlackButton from "../../components/BlackButton";
-const Details = () => {
-  const { name, price, rating, reviews, colors } = API;
+import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/UserAuthContext";
+
+const Details = ({ product }) => {
+  const { productName, productPrice, productRating, productReviews, colors } =
+    product;
   // calculating saleprice from discount and actual price
   let discount = 20;
-  let salePrice = price * ((100 - discount) / 100);
+  let salePrice = productPrice * ((100 - discount) / 100);
+  const { addToCart } = useCart();
+  const { currentUser } = useAuth();
+
+  const handleAddToCart = () => {
+    if (product) {
+      console.log("hello this is me");
+      addToCart(product.id, product);
+    }
+  };
   return (
     <Wrapper>
       {/* product name */}
-      <div className="product__name | title">{name}</div>
+      <div className="product__name | title">{productName}</div>
       {/* rating and reviews */}
       <div className="product__rating">
         {/* rating */}
         <span className="rating-stars">
-          <Stars rating={rating} />
+          <Stars rating={productRating} />
         </span>
         {/* reviews */}
-        <p className="rating-reviews">{reviews}+ Reviews</p>
+        <p className="rating-reviews">{productReviews}+ Reviews</p>
       </div>
       {/* price */}
       <div className="product__price">
@@ -43,7 +56,9 @@ const Details = () => {
         <Colors colors={colors} />
       </div>
       {/* cta button */}
-      <BlackButton>Add to cart</BlackButton>
+      <div onClick={handleAddToCart}>
+        <BlackButton>Add to cart</BlackButton>
+      </div>
     </Wrapper>
   );
 };

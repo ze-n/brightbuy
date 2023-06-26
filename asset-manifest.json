@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/brightbuy/static/css/main.0fb0bb9d.css",
-    "main.js": "/brightbuy/static/js/main.a00dd15e.js",
+    "main.js": "/brightbuy/static/js/main.7c8fa6ac.js",
     "static/media/hero-img.png": "/brightbuy/static/media/hero-img.c59e0b2ff41f906d70f9.png",
     "static/media/clothingModel.png": "/brightbuy/static/media/clothingModel.71017f7f901d430b7f22.png",
     "static/media/product1.png": "/brightbuy/static/media/product1.5baf29fd9574445b576d.png",
@@ -27,10 +27,10 @@
     "static/media/blob.svg": "/brightbuy/static/media/blob.96be742dd13259aff443be91c6782a6d.svg",
     "static/media/arrow.svg": "/brightbuy/static/media/arrow.6fb4a83964a059e0a2c4f53cc89a8128.svg",
     "main.0fb0bb9d.css.map": "/brightbuy/static/css/main.0fb0bb9d.css.map",
-    "main.a00dd15e.js.map": "/brightbuy/static/js/main.a00dd15e.js.map"
+    "main.7c8fa6ac.js.map": "/brightbuy/static/js/main.7c8fa6ac.js.map"
   },
   "entrypoints": [
     "static/css/main.0fb0bb9d.css",
-    "static/js/main.a00dd15e.js"
+    "static/js/main.7c8fa6ac.js"
   ]
 }

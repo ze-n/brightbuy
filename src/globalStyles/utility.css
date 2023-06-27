@@ -44,6 +44,10 @@
   font-size: var(--fs-text-lg);
   line-height: var(--lh-text-lg);
 }
+.text-big {
+  font-size: var(--fs-text-big);
+  line-height: var(--lh-text-big);
+}
 /* aside heading */
 .aside-heading {
   font-size: var(--fs-aside-heading);

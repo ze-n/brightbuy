@@ -86,6 +86,10 @@ body {
   --bg-add-product-form: var(--clr-black);
   --clr-add-product-form: var(--clr-white);
 
+  /* single-product-page */
+  --bg-single-product-page: var(--clr-white);
+  --clr-single-product-page: var(--clr-black);
+
   /*  */
   /* font family */
   /*  */
@@ -129,6 +133,9 @@ body {
   /* text large */
   --fs-text-lg: 1.3rem;
   --lh-text-lg: 2.2rem;
+  /* big */
+  --fs-text-big: 1.3rem;
+  --lh-text-big: 2.2rem;
   /* aside heading */
   /* this is used in footer and header for heading */
   --fs-aside-heading: 1.6rem;
@@ -149,6 +156,10 @@ body {
 
   --fs-placeholder: 1rem;
   --lh-placeholder: 1.6rem;
+
+  /*  table  */
+  --fs-table-heading: 1.3rem;
+  --fs-table-cell: 1.2rem;
   /*  */
   /* layout */
   /*  */
@@ -203,16 +214,29 @@ body {
     /* text medium */
     --fs-text-medium: 1rem;
     --lh-text-medium: 1.7rem;
-
+    /* text big */
+    --fs-text-big: 1.2rem;
+    --lh-text-big: 1.9rem;
     /* label */
     --fs-label: 0.8rem;
     /* placeholder */
     --fs-placeholder: 0.9rem;
     --lh-placeholder: 1.5rem;
 
+    /* table */
+    --fs-table-heading: 1.3rem;
+    --fs-table-cell: 1.1rem;
     /*  */
     /* layout */
     /*  */
     --pinline: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    body {
+      /* table */
+      --fs-table-heading: 1.1rem;
+      --fs-table-cell: 1rem;
+    }
   }
 }

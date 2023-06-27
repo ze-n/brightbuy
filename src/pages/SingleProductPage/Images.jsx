@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 
 const ImagesContainer = ({ images }) => {
-  if (images) {
-    var [mainImage, setMainImage] = useState(images[0]);
-    // console.log(images, " these are the images");
-  }
+  // if (images) {
+  var [mainImage, setMainImage] = useState(images[0]);
+  // console.log(images, " these are the images");
+  // }
 
   return (
     <Wrapper className="product__images-container">

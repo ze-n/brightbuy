@@ -28,7 +28,7 @@ const SingleProductPage = () => {
     }
   }, [allProducts, id]);
 
-  if (!product) {
+  if (!product || !allProducts) {
     return <div>Loading...</div>;
   }
 
@@ -78,8 +78,8 @@ const Wrapper = styled.section`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--bg-single-product-page);
-  color: var(--clr-single-product-page);
+  background-color: var(--bg-product-page);
+  color: var(--clr-product-page);
 
   /*  */
   /* layout */

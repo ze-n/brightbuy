@@ -47,8 +47,6 @@ const ProductsProvider = ({ children }) => {
   };
   useEffect(() => {
     getProductCollections();
-    getProductCollections();
-    getProductCollections();
   }, []);
   // this method is used to store product details in database
   const addProduct = async (

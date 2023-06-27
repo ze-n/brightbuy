@@ -5,6 +5,7 @@ import Images from "./Images";
 import Details from "./Details";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContext";
+import ExtraDetails from "./ExtraDetails";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
@@ -61,6 +62,14 @@ const SingleProductPage = () => {
             {allProducts && <Details product={product} />}
           </div>
         </div>
+        <div className="product__extra-details">
+          <ExtraDetails
+            productDescription={productDescription}
+            productBrand={productBrand}
+            warranty={warranty}
+            customerSupport={customerSupport}
+          />
+        </div>
       </div>
     </Wrapper>
   );
@@ -69,8 +78,8 @@ const Wrapper = styled.section`
   /*  */
   /* colors */
   /*  */
-  background-color: var(--bg-product-page);
-  color: var(--clr-product-page);
+  background-color: var(--bg-single-product-page);
+  color: var(--clr-single-product-page);
 
   /*  */
   /* layout */
@@ -85,6 +94,9 @@ const Wrapper = styled.section`
   /* adding some margin below breadcrumbs */
   .breadcrumbs {
     margin-bottom: 2rem;
+  }
+  .product__extra-details {
+    margin-top: 4rem;
   }
 `;
 

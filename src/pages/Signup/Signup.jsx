@@ -104,7 +104,7 @@ const Signup = () => {
             confirmPassword: "",
           });
       }
-      navigate("/brightbuy");
+      navigate("/");
     }
   };
   return (

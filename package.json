@@ -1,6 +1,5 @@
 {
   "name": "brightbuy",
-  "homepage": "https://ze-n.github.io/brightbuy/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
